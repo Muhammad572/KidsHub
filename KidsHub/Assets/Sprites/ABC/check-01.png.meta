@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: d01cddcc41e0a4f6bb658ec477ea58a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7651191231374543030
+    second: check-01_0
+  - first:
+      213: 7394778714920030128
+    second: check-01_1
+  - first:
+      213: 6961468316868737260
+    second: check-01_2
+  - first:
+      213: 3346747916413505244
+    second: check-01_3
+  - first:
+      213: 3916637070738545353
+    second: check-01_4
+  - first:
+      213: -7617191796664016866
+    second: check-01_5
+  - first:
+      213: 8623731292636408294
+    second: check-01_6
+  - first:
+      213: 6123221383482606718
+    second: check-01_7
+  - first:
+      213: 8220978927716643988
+    second: check-01_8
+  - first:
+      213: 1723161428124358763
+    second: check-01_9
+  - first:
+      213: 2016924829265567902
+    second: check-01_10
+  - first:
+      213: -4990438215505490417
+    second: check-01_11
+  - first:
+      213: 7017226005712586769
+    second: check-01_12
+  - first:
+      213: -8598459860236338661
+    second: check-01_13
+  - first:
+      213: 6427053825453610572
+    second: check-01_14
+  - first:
+      213: -53223238601408710
+    second: check-01_15
+  - first:
+      213: 4156329263826495004
+    second: check-01_16
+  - first:
+      213: -190754380247992534
+    second: check-01_17
+  - first:
+      213: 3375797106913974487
+    second: check-01_18
+  - first:
+      213: 1223086697505297058
+    second: check-01_19
+  - first:
+      213: -7015462359362789900
+    second: check-01_20
+  - first:
+      213: 2827628753041430532
+    second: check-01_21
+  - first:
+      213: -5134996328876997921
+    second: check-01_22
+  - first:
+      213: 6276548182386641462
+    second: check-01_23
+  - first:
+      213: 4629702116850304953
+    second: check-01_24
+  - first:
+      213: 54152509982368858
+    second: check-01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: check-01_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 862
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8c9ae13ed7e2a60800000000000000
+      internalID: 7651191231374543030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 860
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf8d6fdf088f9660800000000000000
+      internalID: 7394778714920030128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 863
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8f81efc8a1c9060800000000000000
+      internalID: 6961468316868737260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 864
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde0b968f79027e20800000000000000
+      internalID: 3346747916413505244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_4
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 865
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca5f732aa0ba5630800000000000000
+      internalID: 3916637070738545353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_5
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 867
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1062d52b6c4a4690800000000000000
+      internalID: -7617191796664016866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 693
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e963009be5ada770800000000000000
+      internalID: 8623731292636408294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_7
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 689
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e748e83f76d0af450800000000000000
+      internalID: 6123221383482606718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_8
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 691
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494b58437c8c61270800000000000000
+      internalID: 8220978927716643988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_9
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 691
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68d10e6036e9e710800000000000000
+      internalID: 1723161428124358763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_10
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 696
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e902a03327e8dfb10800000000000000
+      internalID: 2016924829265567902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_11
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 694
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ec24b22e66ebab0800000000000000
+      internalID: -4990438215505490417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 493
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118c1239fd1326160800000000000000
+      internalID: 7017226005712586769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_13
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 488
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a782f40522ca880800000000000000
+      internalID: -8598459860236338661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_14
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 498
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c465a7af66b713950800000000000000
+      internalID: 6427053825453610572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_15
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 497
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ffd591fb9e24ff0800000000000000
+      internalID: -53223238601408710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_16
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 499
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1660fbb17f3ea930800000000000000
+      internalID: 4156329263826495004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_17
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 507
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27f7fdd6ed4a5df0800000000000000
+      internalID: -190754380247992534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_18
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 298
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8166f359d39de20800000000000000
+      internalID: 3375797106913974487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_19
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 295
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a21f460fd649f010800000000000000
+      internalID: 1223086697505297058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_20
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 289
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd9e07572214ae90800000000000000
+      internalID: -7015462359362789900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_21
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 284
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40817b59e51cd3720800000000000000
+      internalID: 2827628753041430532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_22
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 289
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd20a569b04dcb8b0800000000000000
+      internalID: -5134996328876997921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_23
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 98
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a87ca3157ca1750800000000000000
+      internalID: 6276548182386641462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_24
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 93
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b78cbacb81004040800000000000000
+      internalID: 4629702116850304953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: check-01_25
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 98
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54e131cb6360c000800000000000000
+      internalID: 54152509982368858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      check-01_0: 7651191231374543030
+      check-01_1: 7394778714920030128
+      check-01_10: 2016924829265567902
+      check-01_11: -4990438215505490417
+      check-01_12: 7017226005712586769
+      check-01_13: -8598459860236338661
+      check-01_14: 6427053825453610572
+      check-01_15: -53223238601408710
+      check-01_16: 4156329263826495004
+      check-01_17: -190754380247992534
+      check-01_18: 3375797106913974487
+      check-01_19: 1223086697505297058
+      check-01_2: 6961468316868737260
+      check-01_20: -7015462359362789900
+      check-01_21: 2827628753041430532
+      check-01_22: -5134996328876997921
+      check-01_23: 6276548182386641462
+      check-01_24: 4629702116850304953
+      check-01_25: 54152509982368858
+      check-01_3: 3346747916413505244
+      check-01_4: 3916637070738545353
+      check-01_5: -7617191796664016866
+      check-01_6: 8623731292636408294
+      check-01_7: 6123221383482606718
+      check-01_8: 8220978927716643988
+      check-01_9: 1723161428124358763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

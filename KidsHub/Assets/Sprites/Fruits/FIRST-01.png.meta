@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: a74d5d348624d4937a1d30c856efdbd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7752807384394228102
+    second: FIRST-01_0
+  - first:
+      213: 3921671932054617829
+    second: FIRST-01_1
+  - first:
+      213: -9047947857801382422
+    second: FIRST-01_2
+  - first:
+      213: 5557259913471005372
+    second: FIRST-01_3
+  - first:
+      213: -6115019734129116681
+    second: FIRST-01_4
+  - first:
+      213: 3369484313380620936
+    second: FIRST-01_5
+  - first:
+      213: 1223309492857039485
+    second: FIRST-01_6
+  - first:
+      213: -2334109690320145711
+    second: FIRST-01_7
+  - first:
+      213: -4055151546074712027
+    second: FIRST-01_8
+  - first:
+      213: -6723336242426214658
+    second: FIRST-01_9
+  - first:
+      213: 1370244874163243394
+    second: FIRST-01_10
+  - first:
+      213: 1377099099799009834
+    second: FIRST-01_11
+  - first:
+      213: 6361958830156314378
+    second: FIRST-01_12
+  - first:
+      213: -7217393476144011760
+    second: FIRST-01_13
+  - first:
+      213: 7982181162223823695
+    second: FIRST-01_14
+  - first:
+      213: -7436435652192496168
+    second: FIRST-01_15
+  - first:
+      213: 3210288907199665027
+    second: FIRST-01_16
+  - first:
+      213: 6585184976412252983
+    second: FIRST-01_17
+  - first:
+      213: 3315411399800941302
+    second: FIRST-01_18
+  - first:
+      213: -4494578185343006735
+    second: FIRST-01_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FIRST-01_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 752
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e182192ce786490800000000000000
+      internalID: -7752807384394228102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 752
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee3cb328d39c6630800000000000000
+      internalID: 3921671932054617829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 752
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5fd758c5b3f6280800000000000000
+      internalID: -9047947857801382422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_3
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 752
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb215fa927a5f1d40800000000000000
+      internalID: 5557259913471005372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_4
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 752
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9fab853f5132ba0800000000000000
+      internalID: -6115019734129116681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 535
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a8d477120d2ce20800000000000000
+      internalID: 3369484313380620936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 535
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7a6b1c90811af010800000000000000
+      internalID: 1223309492857039485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_7
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 535
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2bba17a939b9fd0800000000000000
+      internalID: -2334109690320145711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_8
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 534
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52837d9672539b7c0800000000000000
+      internalID: -4055151546074712027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_9
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 536
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef60dac2f49e1b2a0800000000000000
+      internalID: -6723336242426214658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 324
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289ccc30476140310800000000000000
+      internalID: 1370244874163243394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_11
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 324
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ab708c5507c1310800000000000000
+      internalID: 1377099099799009834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 326
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07702359d73a4850800000000000000
+      internalID: 6361958830156314378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_13
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 325
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016e6327fdaa6db90800000000000000
+      internalID: -7217393476144011760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_14
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 319
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b6a23c97766ce60800000000000000
+      internalID: 7982181162223823695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 119
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5140c9c297cc890800000000000000
+      internalID: -7436435652192496168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_16
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 119
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383530490cc3d8c20800000000000000
+      internalID: 3210288907199665027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_17
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 119
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b9a43a8d6436b50800000000000000
+      internalID: 6585184976412252983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_18
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 119
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa6a613a15b20e20800000000000000
+      internalID: 3315411399800941302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIRST-01_19
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 119
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7096724fc00a1c0800000000000000
+      internalID: -4494578185343006735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FIRST-01_0: -7752807384394228102
+      FIRST-01_1: 3921671932054617829
+      FIRST-01_10: 1370244874163243394
+      FIRST-01_11: 1377099099799009834
+      FIRST-01_12: 6361958830156314378
+      FIRST-01_13: -7217393476144011760
+      FIRST-01_14: 7982181162223823695
+      FIRST-01_15: -7436435652192496168
+      FIRST-01_16: 3210288907199665027
+      FIRST-01_17: 6585184976412252983
+      FIRST-01_18: 3315411399800941302
+      FIRST-01_19: -4494578185343006735
+      FIRST-01_2: -9047947857801382422
+      FIRST-01_3: 5557259913471005372
+      FIRST-01_4: -6115019734129116681
+      FIRST-01_5: 3369484313380620936
+      FIRST-01_6: 1223309492857039485
+      FIRST-01_7: -2334109690320145711
+      FIRST-01_8: -4055151546074712027
+      FIRST-01_9: -6723336242426214658
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
