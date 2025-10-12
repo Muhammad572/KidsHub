@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class DraggableLetter : MonoBehaviour
 {
@@ -18,10 +17,10 @@ public class DraggableLetter : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         mainCam = Camera.main;
 
-        // ✅ Ensure visible layer
+        // Ensure visible layer
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null)
-            sr.sortingOrder = 5; // slots should be lower (e.g. 0)
+            sr.sortingOrder = 5; // make sure letters appear above slots
     }
 
     public void SetStartPosition()
@@ -70,8 +69,20 @@ public class DraggableLetter : MonoBehaviour
     public void ResetPosition()
     {
         Debug.Log($"🔄 ResetPosition called for {name} back to {startPosition}");
-        isDragging = false;
-        rb.bodyType = RigidbodyType2D.Dynamic;
         transform.position = startPosition;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // make sure it's unlocked again for dragging
+        isLocked = false;
+
+        // ensure collider stays active
+        var col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = true;
+
+        // force z to front so raycasts work
+        var pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
     }
 }
