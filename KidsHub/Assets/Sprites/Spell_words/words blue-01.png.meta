@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 328d4892545cb434e83e8d9bb2106ce5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5045219829249676004
+    second: words blue-01_0
+  - first:
+      213: 3132535131771238068
+    second: words blue-01_1
+  - first:
+      213: -3660146152248922473
+    second: words blue-01_2
+  - first:
+      213: 3009016236311358399
+    second: words blue-01_3
+  - first:
+      213: -3267731615457567533
+    second: words blue-01_4
+  - first:
+      213: 4627194754057172282
+    second: words blue-01_5
+  - first:
+      213: -1857052744162237713
+    second: words blue-01_6
+  - first:
+      213: -6705142597219169349
+    second: words blue-01_7
+  - first:
+      213: -167052942014146781
+    second: words blue-01_8
+  - first:
+      213: -6449339436527868130
+    second: words blue-01_9
+  - first:
+      213: 4627656763214919569
+    second: words blue-01_10
+  - first:
+      213: -8012046805108557199
+    second: words blue-01_11
+  - first:
+      213: -7671147449713458822
+    second: words blue-01_12
+  - first:
+      213: -4502252380945698135
+    second: words blue-01_13
+  - first:
+      213: -2838520823999632445
+    second: words blue-01_14
+  - first:
+      213: -6756743181560037959
+    second: words blue-01_15
+  - first:
+      213: -2075638438896960953
+    second: words blue-01_16
+  - first:
+      213: -8345422870004364929
+    second: words blue-01_17
+  - first:
+      213: 6624949467103529606
+    second: words blue-01_18
+  - first:
+      213: 7858955168075829316
+    second: words blue-01_19
+  - first:
+      213: 377403959282753880
+    second: words blue-01_20
+  - first:
+      213: -729959691658792911
+    second: words blue-01_21
+  - first:
+      213: 1294865013563063492
+    second: words blue-01_22
+  - first:
+      213: -3463391333336268118
+    second: words blue-01_23
+  - first:
+      213: -110880613485712282
+    second: words blue-01_24
+  - first:
+      213: -4716000368253578099
+    second: words blue-01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: words blue-01_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 936
+        width: 123
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e21f2834b8340640800000000000000
+      internalID: 5045219829249676004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_1
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 936
+        width: 100
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6f7affa10097b20800000000000000
+      internalID: 3132535131771238068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_2
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 934
+        width: 108
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ea031877c843dc0800000000000000
+      internalID: -3660146152248922473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_3
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 936
+        width: 101
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbba8b0135c22c920800000000000000
+      internalID: 3009016236311358399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_4
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 936
+        width: 89
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc965fa86fa6a2d0800000000000000
+      internalID: -3267731615457567533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_5
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 936
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35f026ec19173040800000000000000
+      internalID: 4627194754057172282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_6
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 750
+        width: 108
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2ab074e5c6a36e0800000000000000
+      internalID: -1857052744162237713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_7
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 753
+        width: 107
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb496c455c82f2a0800000000000000
+      internalID: -6705142597219169349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 753
+        width: 33
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327109cfb328eadf0800000000000000
+      internalID: -167052942014146781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 751
+        width: 89
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17a6d9d3f75f76a0800000000000000
+      internalID: -6449339436527868130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_10
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 753
+        width: 107
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197fbd9ce4db83040800000000000000
+      internalID: 4627656763214919569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_11
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 753
+        width: 86
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a73b161ed7fc090800000000000000
+      internalID: -8012046805108557199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 546
+        width: 138
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a718f28b90c9a8590800000000000000
+      internalID: -7671147449713458822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_13
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 541
+        width: 107
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a233904059c481c0800000000000000
+      internalID: -4502252380945698135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_14
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 539
+        width: 113
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbe3f5895c8b98d0800000000000000
+      internalID: -2838520823999632445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_15
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 544
+        width: 101
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd329800e93b32a0800000000000000
+      internalID: -6756743181560037959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_16
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 519
+        width: 113
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a766746d9d133e0800000000000000
+      internalID: -2075638438896960953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_17
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 541
+        width: 104
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7908fc9d1a1f2c80800000000000000
+      internalID: -8345422870004364929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 338
+        width: 101
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a8e99907c80fb50800000000000000
+      internalID: 6624949467103529606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_19
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 340
+        width: 108
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44051ea361e901d60800000000000000
+      internalID: 7858955168075829316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_20
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 338
+        width: 102
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851efd1c6eecc3500800000000000000
+      internalID: 377403959282753880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_21
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 340
+        width: 119
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130f2562789aed5f0800000000000000
+      internalID: -729959691658792911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_22
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 340
+        width: 152
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccf18d8ed848f110800000000000000
+      internalID: 1294865013563063492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_23
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 340
+        width: 115
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa24352aeef8fefc0800000000000000
+      internalID: -3463391333336268118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_24
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 134
+        width: 114
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ce4b46ba2167ef0800000000000000
+      internalID: -110880613485712282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: words blue-01_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 135
+        width: 101
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8452a9c6a66d8eb0800000000000000
+      internalID: -4716000368253578099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      words blue-01_0: 5045219829249676004
+      words blue-01_1: 3132535131771238068
+      words blue-01_10: 4627656763214919569
+      words blue-01_11: -8012046805108557199
+      words blue-01_12: -7671147449713458822
+      words blue-01_13: -4502252380945698135
+      words blue-01_14: -2838520823999632445
+      words blue-01_15: -6756743181560037959
+      words blue-01_16: -2075638438896960953
+      words blue-01_17: -8345422870004364929
+      words blue-01_18: 6624949467103529606
+      words blue-01_19: 7858955168075829316
+      words blue-01_2: -3660146152248922473
+      words blue-01_20: 377403959282753880
+      words blue-01_21: -729959691658792911
+      words blue-01_22: 1294865013563063492
+      words blue-01_23: -3463391333336268118
+      words blue-01_24: -110880613485712282
+      words blue-01_25: -4716000368253578099
+      words blue-01_3: 3009016236311358399
+      words blue-01_4: -3267731615457567533
+      words blue-01_5: 4627194754057172282
+      words blue-01_6: -1857052744162237713
+      words blue-01_7: -6705142597219169349
+      words blue-01_8: -167052942014146781
+      words blue-01_9: -6449339436527868130
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 018b7a3865f9542d587c21b0edbac1a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3103995227268639858
+    second: top box ABC white-01_0
+  - first:
+      213: 4815560136694915918
+    second: top box ABC white-01_1
+  - first:
+      213: -7486704908520458396
+    second: top box ABC white-01_2
+  - first:
+      213: -9206797300186178831
+    second: top box ABC white-01_3
+  - first:
+      213: -5529762928111096617
+    second: top box ABC white-01_4
+  - first:
+      213: -7170261913384929717
+    second: top box ABC white-01_5
+  - first:
+      213: -6267784239156764078
+    second: top box ABC white-01_6
+  - first:
+      213: 6948371366741190299
+    second: top box ABC white-01_7
+  - first:
+      213: -4810925852197856136
+    second: top box ABC white-01_8
+  - first:
+      213: -5276531942050904556
+    second: top box ABC white-01_9
+  - first:
+      213: -8014316065866570063
+    second: top box ABC white-01_10
+  - first:
+      213: -8478566901994834024
+    second: top box ABC white-01_11
+  - first:
+      213: 6485297990997868060
+    second: top box ABC white-01_12
+  - first:
+      213: 2624731961076439521
+    second: top box ABC white-01_13
+  - first:
+      213: -1631958721285265380
+    second: top box ABC white-01_14
+  - first:
+      213: -1307901241824195109
+    second: top box ABC white-01_15
+  - first:
+      213: -8635406403165770525
+    second: top box ABC white-01_16
+  - first:
+      213: -5873754252862630239
+    second: top box ABC white-01_17
+  - first:
+      213: -4126977787616271903
+    second: top box ABC white-01_18
+  - first:
+      213: 5592238930869699559
+    second: top box ABC white-01_19
+  - first:
+      213: 4849625605410527926
+    second: top box ABC white-01_20
+  - first:
+      213: -5347930475482216743
+    second: top box ABC white-01_21
+  - first:
+      213: 5824826296303718846
+    second: top box ABC white-01_22
+  - first:
+      213: -8087768837495959544
+    second: top box ABC white-01_23
+  - first:
+      213: 3529649514300289924
+    second: top box ABC white-01_24
+  - first:
+      213: 4544640480202866341
+    second: top box ABC white-01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: top box ABC white-01_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 967
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cead9a63b931b20800000000000000
+      internalID: 3103995227268639858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 967
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e436b3e2e6e44d240800000000000000
+      internalID: 4815560136694915918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 967
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467f67d4d81e91890800000000000000
+      internalID: -7486704908520458396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 967
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa906b92a2ea3080800000000000000
+      internalID: -9206797300186178831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_4
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 967
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc60d13ae55243b0800000000000000
+      internalID: -5529762928111096617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_5
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 967
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46bd2a87cc1e7c90800000000000000
+      internalID: -7170261913384929717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 731
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252e440517b5409a0800000000000000
+      internalID: -6267784239156764078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_7
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 731
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96aa1aa1f29d6060800000000000000
+      internalID: 6948371366741190299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_8
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 731
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cd0034d682c3db0800000000000000
+      internalID: -4810925852197856136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_9
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 731
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416cd0ca72ef5c6b0800000000000000
+      internalID: -5276531942050904556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_10
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 731
+        width: 177
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b62150fffd67c090800000000000000
+      internalID: -8014316065866570063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_11
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 731
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897b632f254165a80800000000000000
+      internalID: -8478566901994834024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 496
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e7bf78928600a50800000000000000
+      internalID: 6485297990997868060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_13
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 496
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9539aefcbec6420800000000000000
+      internalID: 2624731961076439521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_14
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 496
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18e0b1803e1a59e0800000000000000
+      internalID: -1631958721285265380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_15
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 496
+        width: 178
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bddc6c700c669dde0800000000000000
+      internalID: -1307901241824195109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_16
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 496
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecab20f0afd82880800000000000000
+      internalID: -8635406403165770525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_17
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 496
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a6de24a0ab3c7ea0800000000000000
+      internalID: -5873754252862630239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 272
+        width: 178
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1643d51970ab6c0800000000000000
+      internalID: -4126977787616271903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_19
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 272
+        width: 178
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e3499dbdaf9b9d40800000000000000
+      internalID: 5592238930869699559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_20
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 272
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba12203bc45d4340800000000000000
+      internalID: 4849625605410527926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_21
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 272
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6856d219558c5b0800000000000000
+      internalID: -5347930475482216743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_22
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 272
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1998db7a0f5d050800000000000000
+      internalID: 5824826296303718846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_23
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 272
+        width: 178
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8005497d71972cf80800000000000000
+      internalID: -8087768837495959544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 55
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 483bf794885dbf030800000000000000
+      internalID: 3529649514300289924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top box ABC white-01_25
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 55
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae3a5e207ec11f30800000000000000
+      internalID: 4544640480202866341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      top box ABC white-01_0: 3103995227268639858
+      top box ABC white-01_1: 4815560136694915918
+      top box ABC white-01_10: -8014316065866570063
+      top box ABC white-01_11: -8478566901994834024
+      top box ABC white-01_12: 6485297990997868060
+      top box ABC white-01_13: 2624731961076439521
+      top box ABC white-01_14: -1631958721285265380
+      top box ABC white-01_15: -1307901241824195109
+      top box ABC white-01_16: -8635406403165770525
+      top box ABC white-01_17: -5873754252862630239
+      top box ABC white-01_18: -4126977787616271903
+      top box ABC white-01_19: 5592238930869699559
+      top box ABC white-01_2: -7486704908520458396
+      top box ABC white-01_20: 4849625605410527926
+      top box ABC white-01_21: -5347930475482216743
+      top box ABC white-01_22: 5824826296303718846
+      top box ABC white-01_23: -8087768837495959544
+      top box ABC white-01_24: 3529649514300289924
+      top box ABC white-01_25: 4544640480202866341
+      top box ABC white-01_3: -9206797300186178831
+      top box ABC white-01_4: -5529762928111096617
+      top box ABC white-01_5: -7170261913384929717
+      top box ABC white-01_6: -6267784239156764078
+      top box ABC white-01_7: 6948371366741190299
+      top box ABC white-01_8: -4810925852197856136
+      top box ABC white-01_9: -5276531942050904556
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
