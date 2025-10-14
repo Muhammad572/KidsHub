@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class LetterScatterManager : MonoBehaviour
 {
     [Header("Letter Prefab Settings")]
-    public GameObject letterPrefab; // Prefab with SpriteRenderer + DraggableLetter + Collider2D (isTrigger)
-    public Transform scatterArea;   // Parent area where letters appear
-    public float scatterRadius = 5f;
+    public GameObject letterPrefab; // Prefab with Image + DraggableLetter
+    public RectTransform scatterArea; // UI parent area (RectTransform)
+    public float scatterRadius = 300f;
 
-    private List<GameObject> activeLetters = new List<GameObject>();
+    private readonly List<GameObject> activeLetters = new List<GameObject>();
 
     public void SetupLetters(string word, Dictionary<char, Sprite> letterSpriteDict)
     {
@@ -32,58 +33,64 @@ public class LetterScatterManager : MonoBehaviour
             return;
         }
 
+        // Get safe area radius (fit within scatter area)
+        float safeRadius = Mathf.Min(scatterArea.rect.width, scatterArea.rect.height) / 2f - 100f;
+        safeRadius = Mathf.Clamp(scatterRadius, 0f, safeRadius);
+
         List<char> letters = new List<char>(word.ToUpperInvariant().ToCharArray());
 
-        // 🔀 Shuffle letters
+        // 🔀 Shuffle
         for (int i = 0; i < letters.Count; i++)
         {
             int randomIndex = Random.Range(i, letters.Count);
             (letters[i], letters[randomIndex]) = (letters[randomIndex], letters[i]);
         }
 
-        // 🧩 Spawn letters
+        // 🧩 Spawn each letter
         foreach (char c in letters)
         {
             GameObject go = Instantiate(letterPrefab, scatterArea);
             go.name = $"Letter_{c}";
 
-            // ✅ Set sprite
-            SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
-            if (sr != null && letterSpriteDict.ContainsKey(c))
-                sr.sprite = letterSpriteDict[c];
+            // ✅ Ensure RectTransform scale/anchor is correct
+            RectTransform rect = go.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0.5f, 0.5f);
+            rect.anchorMax = new Vector2(0.5f, 0.5f);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.localScale = Vector3.one;
+            rect.SetAsLastSibling();
+
+            // ✅ Apply sprite to Image
+            Image img = go.GetComponent<Image>();
+            if (img != null && letterSpriteDict.ContainsKey(c))
+                img.sprite = letterSpriteDict[c];
             else
                 Debug.LogWarning($"❗ Missing sprite for letter: {c}");
 
-            // ✅ Random scatter position
-            Vector2 randomPos = Random.insideUnitCircle * scatterRadius;
-            go.transform.localPosition = randomPos;
+            // ✅ Random UI position (center-based)
+            Vector2 randomPos = Random.insideUnitCircle * safeRadius;
+            rect.anchoredPosition = randomPos;
 
-            // ✅ Record correct spawn position
+            // ✅ Initialize draggable
             DraggableLetter draggable = go.GetComponent<DraggableLetter>();
             if (draggable != null)
             {
                 draggable.letter = c;
-                draggable.SetStartPosition(); // 👈 Correct placement
-                Debug.Log($"✅ Spawned draggable letter: {c}");
+                draggable.SetStartPosition();
             }
-            else
-            {
-                Debug.LogError($"❌ No DraggableLetter script found on prefab {go.name}");
-            }
-
-            // ✅ Ensure collider is set correctly
-            Collider2D col = go.GetComponent<Collider2D>();
-            if (col != null)
-                col.isTrigger = true;
 
             activeLetters.Add(go);
+
+            Debug.Log($"✅ Spawned draggable letter: {c} at {rect.anchoredPosition}");
         }
     }
 
-    void ClearLetters()
+    public void ClearLetters()
     {
         foreach (var l in activeLetters)
-            if (l != null) Destroy(l);
+            if (l != null)
+                Destroy(l);
+
         activeLetters.Clear();
     }
 }

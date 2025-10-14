@@ -5,8 +5,9 @@ using UnityEngine.UI;
 [System.Serializable]
 public class AnimalData
 {
-    public string animalName; // e.g. "ELEPHANT"
-    public Sprite animalSprite;
+    public string animalName;       // e.g. "ELEPHANT"
+    public Sprite animalSprite;     // Image shown
+    public AudioClip animalSound;   // Sound played when word completes
 }
 
 public class AnimalManager : MonoBehaviour
@@ -23,6 +24,9 @@ public class AnimalManager : MonoBehaviour
     public LetterScatterManager letterScatterManager;
     public WordManager wordManager;
 
+    [Header("Audio Settings")]
+    [Range(0f, 1f)] public float animalSoundVolume = 0.9f;
+
     private int currentAnimalIndex = -1;
     private int lastAnimalIndex = -1;
     private Dictionary<char, Sprite> letterSpriteDict = new Dictionary<char, Sprite>();
@@ -38,7 +42,7 @@ public class AnimalManager : MonoBehaviour
         if (wordManager == null) Debug.LogError("❌ WordManager not assigned!");
         if (letterScatterManager == null) Debug.LogError("❌ LetterScatterManager not assigned!");
 
-        // Subscribe to word complete event from WordManager
+        // Subscribe to word complete event
         wordManager.OnWordCompleted += HandleWordCompleted;
 
         LoadNextAnimal();
@@ -127,13 +131,29 @@ public class AnimalManager : MonoBehaviour
 
     private void HandleWordCompleted()
     {
-        Debug.Log("🎉 Word completed! Loading next animal in 2 seconds...");
-        Invoke(nameof(LoadNextAnimal), 2f); // Delay for celebration animation
+        Debug.Log("🎉 Word completed!");
+
+        // ✅ Play animal sound after completion
+        if (currentAnimalIndex >= 0 && currentAnimalIndex < animals.Count)
+        {
+            AnimalData currentAnimal = animals[currentAnimalIndex];
+            if (currentAnimal.animalSound != null)
+            {
+                Debug.Log($"🔊 Playing sound for: {currentAnimal.animalName}");
+                AudioManager.Instance?.PlaySFXSeparate(currentAnimal.animalSound, animalSoundVolume);
+            }
+            else
+            {
+                Debug.LogWarning($"⚠️ No sound assigned for: {currentAnimal.animalName}");
+            }
+        }
+
+        // ⏳ Load next animal after delay
+        Invoke(nameof(LoadNextAnimal), 2f);
     }
 
     private void OnDestroy()
     {
-        // Cleanly unsubscribe
         if (wordManager != null)
             wordManager.OnWordCompleted -= HandleWordCompleted;
     }
