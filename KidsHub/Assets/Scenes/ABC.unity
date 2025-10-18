@@ -3182,7 +3182,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000715545844745b41f
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4457,7 +4457,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4583,12 +4583,14 @@ MonoBehaviour:
   musicSource: {fileID: 936099378}
   sfxSource: {fileID: 936099377}
   bubblePopSound: {fileID: 8300000, guid: 695866c29bbb34d338015143736af7dc, type: 3}
-  failSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
+  failSound: {fileID: 8300000, guid: 7e4fc2b919cf2624ca50dc40acc4ce0d, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 65fb318186c9f44b8be95c0aca1b48eb, type: 3}
   musicVolume: 0.12
   sfxVolume: 1
   nextSetDelay: 0.8
   appearScale: 1.2
+  loadingScreen: {fileID: 0}
+  loadingDuration: 2
 --- !u!82 &936099377
 AudioSource:
   m_ObjectHideFlags: 0

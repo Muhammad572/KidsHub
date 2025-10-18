@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &112624959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8683334, y: 0.8285905}
   m_AnchorMax: {x: 0.96400005, y: 0.974293}
-  m_AnchoredPosition: {x: -2.7700195, y: -5.450012}
+  m_AnchoredPosition: {x: -2.7700195, y: -5.449951}
   m_SizeDelta: {x: 47.680054, y: 31.660034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2027930945
@@ -1041,6 +1041,12 @@ MonoBehaviour:
   - {fileID: -2824549561159899549, guid: e4a69a76945674c69ae5b6b2a276fd8d, type: 3}
   - {fileID: 2683630202238160162, guid: e4a69a76945674c69ae5b6b2a276fd8d, type: 3}
   - {fileID: -3908261443269792572, guid: e4a69a76945674c69ae5b6b2a276fd8d, type: 3}
+  bgMusicSource: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: a6b6646c50cb3a94cb9626f77258d23f, type: 3}
+  musicVolume: 0.1
+  correctSound: {fileID: 8300000, guid: de36a26fcf285ba4fa10de1dbbac7550, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1c2e71c1e28421b4c8ec844a7c3b61a9, type: 3}
+  sfxVolume: 0.4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

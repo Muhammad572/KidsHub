@@ -1748,7 +1748,7 @@ MonoBehaviour:
   - {fileID: 5827260854171573612, guid: 5b407da16db36431899ecea9b4eb4b81, type: 3}
   - {fileID: -487630562370998276, guid: 5b407da16db36431899ecea9b4eb4b81, type: 3}
   targetFruitImage: {fileID: 120088135}
-  backgroundMusicVolume: 0.6
+  backgroundMusicVolume: 1
   backgroundMusic: {fileID: 8300000, guid: 0d8759a171249490f9c5be450f26de2c, type: 3}
   correctSound: {fileID: 8300000, guid: 74dadf5e7350c40ebb202c944dd6ad6d, type: 3}
   wrongSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}

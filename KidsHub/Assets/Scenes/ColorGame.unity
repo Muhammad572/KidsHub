@@ -218,6 +218,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
+      propertyPath: spawnDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
       propertyPath: colorList.Array.size
       value: 17
       objectReference: {fileID: 0}
@@ -953,7 +957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
       propertyPath: spawnDelay
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
       propertyPath: colorList.Array.size
@@ -1422,6 +1426,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1746835460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746835462}
+  - component: {fileID: 1746835461}
+  m_Layer: 0
+  m_Name: bg music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1746835461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746835460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197a99c4f3372614c81df37ed3b1de42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  backgroundMusic: {fileID: 8300000, guid: 1ab416edb7d87e24c84ad0357c8388ed, type: 3}
+--- !u!4 &1746835462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746835460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.26681, y: -2.48821, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895600780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,8 +1592,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ab416edb7d87e24c84ad0357c8388ed, type: 3}
+    - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
       propertyPath: spawnDelay
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2775510729418867155, guid: 41e3780749f5a4f42ad80b3af8375163, type: 3}
       propertyPath: colorList.Array.size
@@ -1940,3 +1993,4 @@ SceneRoots:
   - {fileID: 4886228031949581276}
   - {fileID: 374720528}
   - {fileID: 959549632}
+  - {fileID: 1746835462}

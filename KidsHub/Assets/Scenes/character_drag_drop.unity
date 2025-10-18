@@ -774,64 +774,64 @@ MonoBehaviour:
   animals:
   - animalName: giraffe
     animalSprite: {fileID: -4629899152483022135, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 64c9113ff950b4ae9ac016552b9ec8ff, type: 3}
+    animalSound: {fileID: 8300000, guid: e068106b287305f40a802aa3e03288af, type: 3}
   - animalName: dog
     animalSprite: {fileID: 1419150111127802706, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 96cc759b1441c4619a6f121a5398dc14, type: 3}
+    animalSound: {fileID: 8300000, guid: 69ec3ad017ce36544a571688102fa9cd, type: 3}
   - animalName: bear
     animalSprite: {fileID: -7409347990452659558, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 539202d1240564f74be3441c1fac69ff, type: 3}
+    animalSound: {fileID: 8300000, guid: bbc3da8b761c34b43ab1ffc6f44b56b7, type: 3}
   - animalName: dolphin
     animalSprite: {fileID: 736363845486877536, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: e2360449061f5483eb4dc93f975a7af5, type: 3}
+    animalSound: {fileID: 8300000, guid: 94d3ba2d2dfb0df4bb24bc1c9bc4bd15, type: 3}
   - animalName: tiger
     animalSprite: {fileID: -5751596943817703820, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 21a3b99eee7b040078aab39e22d19d3e, type: 3}
+    animalSound: {fileID: 8300000, guid: e22b75664f0d18c4eb4f5afc1c1b63be, type: 3}
   - animalName: fox
     animalSprite: {fileID: -7529603331876446905, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: debfec9c68c7b45ee84bfca84630d515, type: 3}
+    animalSound: {fileID: 8300000, guid: a3af9b3c356cbb0488115539c93dde3b, type: 3}
   - animalName: panda
     animalSprite: {fileID: -78436348526710385, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 7e8fb4f07a70a45dd8b4bfc9f087b46b, type: 3}
+    animalSound: {fileID: 8300000, guid: a650ca91ae3b57b40aeb63f8ed44fea9, type: 3}
   - animalName: wolf
     animalSprite: {fileID: 2156202484997189780, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: a71d7c5bd5b3240619b164db37990b34, type: 3}
+    animalSound: {fileID: 8300000, guid: 75da167b291b32b41a1f2aa6323e03ba, type: 3}
   - animalName: sheep
     animalSprite: {fileID: 6696156339858766137, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 8ccce0c2ca70a4555be600433913bd50, type: 3}
+    animalSound: {fileID: 8300000, guid: 772c1c2adda5f9649954277a702deefe, type: 3}
   - animalName: cow
     animalSprite: {fileID: -5034534154714487902, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 8d771b50214d64c44b6be0245340e46b, type: 3}
+    animalSound: {fileID: 8300000, guid: 3fb5dbe2b7a23904b97f27e220c4f900, type: 3}
   - animalName: goat
     animalSprite: {fileID: -5747795244350036865, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 72000d885ce0f4c0991cca19792beb66, type: 3}
+    animalSound: {fileID: 8300000, guid: cf6f00d433a8c9047b2d4a58207be81e, type: 3}
   - animalName: gorilla
     animalSprite: {fileID: 3115392174616997582, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: fa156f57395fb425badbe374d1d84e9a, type: 3}
+    animalSound: {fileID: 8300000, guid: 30b68e413f70167419dc8e1dece7418d, type: 3}
   - animalName: monkey
     animalSprite: {fileID: 1276425095895291812, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 824f5ab2d66314803a00ee2e1df0175b, type: 3}
+    animalSound: {fileID: 8300000, guid: 0bdbc3a687e56774da2bced1c34f1c4a, type: 3}
   - animalName: lion
     animalSprite: {fileID: 5765426476463927442, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 512dfd539cb4f4bd7a6a6fe6248a1abe, type: 3}
+    animalSound: {fileID: 8300000, guid: 85b40e6ae9c456541aa00357c9b878d2, type: 3}
   - animalName: donkey
     animalSprite: {fileID: 2817951216443365015, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: e6b2ca8c9b03147d491ab18180744e34, type: 3}
+    animalSound: {fileID: 8300000, guid: 98affe6f593197a47a6e7aad96bae045, type: 3}
   - animalName: rat
     animalSprite: {fileID: 7488224594526167675, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 17ca5a0638f2246d3893924935fa7a84, type: 3}
+    animalSound: {fileID: 8300000, guid: 959cdb8cd0641954fbad54de5022d181, type: 3}
   - animalName: horse
     animalSprite: {fileID: 3349147308344429685, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 107245913dd0a4c8c8bdb8acb446baeb, type: 3}
+    animalSound: {fileID: 8300000, guid: 67d077c6e1b73e94882312159db293d8, type: 3}
   - animalName: camel
     animalSprite: {fileID: 5297378086210514703, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: 16af06acaed0d4173acc3004b8917319, type: 3}
+    animalSound: {fileID: 8300000, guid: 6f1a64cd450002d4f9c1d3088f43e128, type: 3}
   - animalName: elephant
     animalSprite: {fileID: 5005195685466045417, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: a0e9070d0dad64f55bb40c8cf654a259, type: 3}
+    animalSound: {fileID: 8300000, guid: c62264add79ab5d40ab8d5e7fea5f927, type: 3}
   - animalName: zebra
     animalSprite: {fileID: 3707821676981194488, guid: 6f9caf0fcd4a74b3287f0c6e9073a7a9, type: 3}
-    animalSound: {fileID: 8300000, guid: e5777546bc14749fe829639d9ee94c09, type: 3}
+    animalSound: {fileID: 8300000, guid: e7f94d08bae30c94f9656842c44e99fc, type: 3}
   animalImage: {fileID: 134973179}
   letterSprites:
   - {fileID: 5045219829249676004, guid: 328d4892545cb434e83e8d9bb2106ce5, type: 3}
@@ -862,7 +862,7 @@ MonoBehaviour:
   - {fileID: -4716000368253578099, guid: 328d4892545cb434e83e8d9bb2106ce5, type: 3}
   letterScatterManager: {fileID: 1924355613}
   wordManager: {fileID: 944573726}
-  animalSoundVolume: 0.9
+  animalSoundVolume: 0.1
 --- !u!1 &944573725
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +951,10 @@ MonoBehaviour:
   slotScale: 50
   wrongLetterSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
   soundVolume: 0.8
+  completeSound: {fileID: 8300000, guid: d3e385dcae24dbf449e8b8949b4d1e8c, type: 3}
+  completeSoundVolume: 1
+  backgroundMusic: {fileID: 8300000, guid: e7364abd073f2b142901572cb03352eb, type: 3}
+  backgroundMusicVolume: 0.1
 --- !u!4 &944573727
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  musicVolume: 0.8
+  musicVolume: 0.524
   sfxVolume: 1
 --- !u!4 &1663183507
 Transform:

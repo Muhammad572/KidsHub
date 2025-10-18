@@ -170,6 +170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorManager
   colorName: 
   colorSound: {fileID: 0}
-  startSpeed: 8
-  slowDownRate: 2
+  startSpeed: 6
+  slowDownRate: 1
   minSpeed: 1
+  startScale: 0.3
+  targetScale: 1
+  scaleSpeed: 2
+  autoDestroyTime: 4
