@@ -862,7 +862,7 @@ MonoBehaviour:
   - {fileID: -4716000368253578099, guid: 328d4892545cb434e83e8d9bb2106ce5, type: 3}
   letterScatterManager: {fileID: 1924355613}
   wordManager: {fileID: 944573726}
-  animalSoundVolume: 0.1
+  animalSoundVolume: 0.75
 --- !u!1 &944573725
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,11 +950,11 @@ MonoBehaviour:
   spacing: 100
   slotScale: 50
   wrongLetterSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
-  soundVolume: 0.8
+  soundVolume: 1
   completeSound: {fileID: 8300000, guid: d3e385dcae24dbf449e8b8949b4d1e8c, type: 3}
-  completeSoundVolume: 1
+  completeSoundVolume: 0.71
   backgroundMusic: {fileID: 8300000, guid: e7364abd073f2b142901572cb03352eb, type: 3}
-  backgroundMusicVolume: 0.1
+  backgroundMusicVolume: 0.12
 --- !u!4 &944573727
 Transform:
   m_ObjectHideFlags: 0
@@ -1228,7 +1228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1663183506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  musicVolume: 0.524
+  musicVolume: 0.01
   sfxVolume: 1
 --- !u!4 &1663183507
 Transform:
