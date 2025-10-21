@@ -8,3 +8,9 @@ public class AnimalDataCorsoul
 
     public AudioClip animalSound; // ✅ New
 }
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-//using UnityEngine;
+﻿//using UnityEngine;
 
 //public class ColorManager : MonoBehaviour
 //{
@@ -240,3 +240,10 @@ public class ColorManager : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+
+

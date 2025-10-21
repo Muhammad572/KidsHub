@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -36,17 +37,40 @@ public class AnimalManager : MonoBehaviour
         LoadLetterSprites();
     }
 
+    //void Start()
+    //{
+    //    if (animalImage == null) Debug.LogError("❌ Animal Image not assigned!");
+    //    if (wordManager == null) Debug.LogError("❌ WordManager not assigned!");
+    //    if (letterScatterManager == null) Debug.LogError("❌ LetterScatterManager not assigned!");
+
+    //    // Subscribe to word complete event
+    //    wordManager.OnWordCompleted += HandleWordCompleted;
+
+    //    LoadNextAnimal();
+    //}
+
     void Start()
-    {
-        if (animalImage == null) Debug.LogError("❌ Animal Image not assigned!");
-        if (wordManager == null) Debug.LogError("❌ WordManager not assigned!");
-        if (letterScatterManager == null) Debug.LogError("❌ LetterScatterManager not assigned!");
+{
+    if (animalImage == null) Debug.LogError("❌ Animal Image not assigned!");
+    if (wordManager == null) Debug.LogError("❌ WordManager not assigned!");
+    if (letterScatterManager == null) Debug.LogError("❌ LetterScatterManager not assigned!");
 
-        // Subscribe to word complete event
-        wordManager.OnWordCompleted += HandleWordCompleted;
+    // Subscribe to word complete event
+    wordManager.OnWordCompleted += HandleWordCompleted;
 
-        LoadNextAnimal();
-    }
+    // 🕹️ Show loading at game start
+    LoadingManager.Instance?.ShowLoading(2f);
+
+    // Load the first animal after loading panel
+    StartCoroutine(LoadFirstAnimalAfterDelay(2f));
+}
+
+private IEnumerator LoadFirstAnimalAfterDelay(float delay)
+{
+    yield return new WaitForSeconds(delay);
+    LoadNextAnimal();
+}
+
 
     void LoadLetterSprites()
     {
@@ -109,25 +133,54 @@ public class AnimalManager : MonoBehaviour
         Debug.Log($"✅ Loaded animal: {word}");
     }
 
+    //public void LoadNextAnimal()
+    //{
+    //    if (animals == null || animals.Count == 0)
+    //    {
+    //        Debug.LogError("❌ No animals available!");
+    //        return;
+    //    }
+
+    //    int nextIndex = Random.Range(0, animals.Count);
+
+    //    // 🔄 Prevent same animal twice in a row
+    //    if (animals.Count > 1)
+    //    {
+    //        while (nextIndex == lastAnimalIndex)
+    //            nextIndex = Random.Range(0, animals.Count);
+    //    }
+
+    //    LoadAnimal(nextIndex);
+    //}
+
     public void LoadNextAnimal()
+{
+    if (animals == null || animals.Count == 0)
     {
-        if (animals == null || animals.Count == 0)
-        {
-            Debug.LogError("❌ No animals available!");
-            return;
-        }
-
-        int nextIndex = Random.Range(0, animals.Count);
-
-        // 🔄 Prevent same animal twice in a row
-        if (animals.Count > 1)
-        {
-            while (nextIndex == lastAnimalIndex)
-                nextIndex = Random.Range(0, animals.Count);
-        }
-
-        LoadAnimal(nextIndex);
+        Debug.LogError("❌ No animals available!");
+        return;
     }
+
+    // 🕹️ Show loading panel before next animal
+    LoadingManager.Instance?.ShowLoading(2f);
+
+    StartCoroutine(LoadAnimalAfterDelay(2f));
+}
+
+private IEnumerator LoadAnimalAfterDelay(float delay)
+{
+    yield return new WaitForSeconds(delay);
+
+    int nextIndex = Random.Range(0, animals.Count);
+    if (animals.Count > 1)
+    {
+        while (nextIndex == lastAnimalIndex)
+            nextIndex = Random.Range(0, animals.Count);
+    }
+
+    LoadAnimal(nextIndex);
+}
+
 
     private void HandleWordCompleted()
     {
