@@ -1901,6 +1901,54 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 690923868710100804, guid: 2660d75a516f7496f84ffaffd5cbf2e1, type: 3}
   m_PrefabInstance: {fileID: 278662306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1491713628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491713630}
+  - component: {fileID: 1491713631}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1491713630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491713628}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.91196, y: -2.5862, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491713631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491713628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79cda32d42d244adaa99b3a8ca9645e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicVolume: 0.125
+  sfxVolume: 1
 --- !u!1 &1583113782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,7 +2503,7 @@ MonoBehaviour:
   - {fileID: 5827260854171573612, guid: 5b407da16db36431899ecea9b4eb4b81, type: 3}
   - {fileID: -487630562370998276, guid: 5b407da16db36431899ecea9b4eb4b81, type: 3}
   targetFruitImage: {fileID: 120088135}
-  backgroundMusicVolume: 1
+  backgroundMusicVolume: 0.125
   backgroundMusic: {fileID: 8300000, guid: 0d8759a171249490f9c5be450f26de2c, type: 3}
   correctSound: {fileID: 8300000, guid: 74dadf5e7350c40ebb202c944dd6ad6d, type: 3}
   wrongSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
@@ -2492,3 +2540,4 @@ SceneRoots:
   - {fileID: 1922147482}
   - {fileID: 2002116210}
   - {fileID: 278662306}
+  - {fileID: 1491713630}

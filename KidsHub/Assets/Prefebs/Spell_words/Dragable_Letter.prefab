@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5693113751420531769}
   - component: {fileID: 7883364686829308687}
   - component: {fileID: 1020336804472340405}
+  - component: {fileID: 8314423173917653417}
   m_Layer: 5
   m_Name: Dragable_Letter
   m_TagString: Untagged
@@ -165,6 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableLetter
   letter: 0
+  dragScale: 1.15
+  moveSmoothness: 15
+  returnSpeed: 6
 --- !u!114 &1020336804472340405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +181,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85fe2226f80c4807b886067b67c41d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickRayTest
+--- !u!225 &8314423173917653417
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766338965088330308}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -525,54 +525,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &123668884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 123668886}
-  - component: {fileID: 123668885}
-  m_Layer: 0
-  m_Name: CharacterAppearAtStart
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &123668885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123668884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b2716ab0a07fe40b34ff66542edde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterAppearAtStart
-  character: {fileID: 7054688985078763108, guid: 1375a252b89144745aad27c3140434a9, type: 3}
-  firstAppearTime: 6
-  secondAppearDelay: 4
-  appearDuration: 2
---- !u!4 &123668886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123668884}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.03503667, z: -0, w: 0.9993861}
-  m_LocalPosition: {x: -6.78, y: -3.94, z: -0.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 4.016, z: 0}
 --- !u!1 &130116942
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,10 +721,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5796148587923327437, guid: 2660d75a516f7496f84ffaffd5cbf2e1, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 62ab229c4105a044dad81570ad63afa4, type: 2}
     - target: {fileID: 7067940615276492861, guid: 2660d75a516f7496f84ffaffd5cbf2e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1
@@ -4844,6 +4792,8 @@ MonoBehaviour:
   sfxVolume: 1
   nextSetDelay: 0.8
   appearScale: 1.2
+  shakeDuration: 0.2
+  shakeMagnitude: 5
   loadingScreen: {fileID: 146969844}
   loadingDuration: 2
 --- !u!82 &936099377
@@ -4859,7 +4809,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.125
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9693,4 +9643,3 @@ SceneRoots:
   - {fileID: 936099375}
   - {fileID: 1922147482}
   - {fileID: 230854392}
-  - {fileID: 123668886}
