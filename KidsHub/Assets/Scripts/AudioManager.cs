@@ -112,15 +112,23 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
+
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         if (musicSource == null)
         {
@@ -135,13 +143,30 @@ public class AudioManager : MonoBehaviour
     }
 
     // 🎵 Background music control
-    public void PlayBackgroundMusic(AudioClip clip)
+    // public void PlayBackgroundMusic(AudioClip clip)
+    // {
+    //     if (clip == null) return;
+    //     musicSource.clip = clip;
+    //     musicSource.volume = musicVolume;
+    //     musicSource.Play();
+    // }
+
+    public void PlayBackgroundMusic(AudioClip music)
     {
-        if (clip == null) return;
-        musicSource.clip = clip;
+        if (musicSource == null)
+        {
+            musicSource = gameObject.AddComponent<AudioSource>();
+            musicSource.loop = true;
+            musicSource.playOnAwake = false;
+        }
+
+        musicSource.Stop();
+        musicSource.clip = music;
         musicSource.volume = musicVolume;
+        musicSource.pitch = 1f; // ✅ Reset pitch
         musicSource.Play();
     }
+
 
     public void StopBackgroundMusic()
     {
@@ -162,11 +187,32 @@ public class AudioManager : MonoBehaviour
     }
 
     // 🔊 Play SFX with custom volume
-    public void PlaySFX(AudioClip clip, float volume)
+    // public void PlaySFX(AudioClip clip, float volume)
+    // {
+    //     if (clip == null) return;
+    //     sfxSource.PlayOneShot(clip, Mathf.Clamp01(volume));
+    // }
+
+    public void PlaySFX(AudioClip clip, float volume = 1f)
     {
+        Debug.Log($"🎵 Playing {clip.name} at pitch {sfxSource.pitch} and volume {sfxSource.volume}");
+
         if (clip == null) return;
-        sfxSource.PlayOneShot(clip, Mathf.Clamp01(volume));
+
+        if (sfxSource == null)
+        {
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            sfxSource.playOnAwake = false;
+            sfxSource.loop = false;
+        }
+
+        sfxSource.Stop();
+        sfxSource.clip = clip;
+        sfxSource.volume = sfxVolume * volume;
+        sfxSource.pitch = 1f; // ✅ VERY IMPORTANT — prevent fast playback
+        sfxSource.Play();
     }
+
 
     // 🔊 Play SFX on a temporary AudioSource (isolated channel)
     public void PlaySFXSeparate(AudioClip clip, float volume = 1f)
