@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2955686494525194403}
   - component: {fileID: 1414106481244923028}
   - component: {fileID: 3859544817204156570}
-  - component: {fileID: 4066560409507356684}
   m_Layer: 0
   m_Name: Gliter_Effect
   m_TagString: Untagged
@@ -4841,7 +4840,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7b4ad3d7f4c24a2ab0ce36fc464e2dc, type: 2}
+  - {fileID: 2100000, guid: 4098c7888bc6148c8b2ce335164f5ca9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4895,15 +4894,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &4066560409507356684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094013159393351482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73786f390d5c45f1987b0da41c4881c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AutoDestroyAfterPlay
