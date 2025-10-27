@@ -64,6 +64,11 @@ public class MainMenuLevelManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        // 🧽 Stop any ongoing music before loading the menu
+        if (AudioManager.Instance != null)
+            // AudioManager.Instance.StopAllMusic();
+            AudioManager.Instance.StopAllMusic();
+            
         SceneManager.LoadScene("Main");
     }
 

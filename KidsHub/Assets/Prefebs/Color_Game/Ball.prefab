@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2360127128922930214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7206315956896018607
@@ -170,6 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorManager
   colorName: 
   colorSound: {fileID: 0}
+  sparkleChime: {fileID: 8300000, guid: 3e0b0f10862274c668af9cb5561b64ce, type: 3}
+  BubblePop: {fileID: 8300000, guid: 6c16c9c4a604a4e6dae359cb33fb5a68, type: 3}
+  BubbleSpawn: {fileID: 8300000, guid: 3e0b0f10862274c668af9cb5561b64ce, type: 3}
   startSpeed: 6
   slowDownRate: 1
   minSpeed: 1
@@ -177,3 +181,85 @@ MonoBehaviour:
   targetScale: 1
   scaleSpeed: 2
   autoDestroyTime: 4
+  sfxVolume: 1
+  sparkleFXPrefab: {fileID: 4088859706912760572, guid: 71ec66745020143c7b6d53f134911ad3, type: 3}
+  confettiFXPrefab: {fileID: 31337241314228682, guid: a5267fa2c74e5438582e9fa434dbdc2d, type: 3}
+  colorTrailPrefab: {fileID: 6286720650551111712, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+--- !u!1001 &8201725714633852776
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4507213406160885983}
+    m_Modifications:
+    - target: {fileID: 2089909895511694666, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089909895511694666, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089909895511694666, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.40494838
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089909895511694666, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.40494838
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286720650551111712, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+      propertyPath: m_Name
+      value: ColorTrailFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+--- !u!4 &2360127128922930214 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5841935126732651342, guid: c2997c48f495b44bfab982464960ec24, type: 3}
+  m_PrefabInstance: {fileID: 8201725714633852776}
+  m_PrefabAsset: {fileID: 0}

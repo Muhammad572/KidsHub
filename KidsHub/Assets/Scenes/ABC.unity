@@ -4784,8 +4784,6 @@ MonoBehaviour:
   - {fileID: 637234814}
   - {fileID: 1513213107}
   - {fileID: 1763718980}
-  musicSource: {fileID: 936099378}
-  sfxSource: {fileID: 936099377}
   bubblePopSound: {fileID: 8300000, guid: 695866c29bbb34d338015143736af7dc, type: 3}
   failSound: {fileID: 8300000, guid: 7e4fc2b919cf2624ca50dc40acc4ce0d, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 65fb318186c9f44b8be95c0aca1b48eb, type: 3}

@@ -1,139 +1,193 @@
-﻿//using UnityEngine;
+﻿// using UnityEngine;
+// using DG.Tweening;
 
-//public class ColorManager : MonoBehaviour
-//{
-//    [Header("Color Info")]
-//    public string colorName;
-//    public AudioClip colorSound;
+// public class ColorManager : MonoBehaviour
+// {
+//     [Header("Color Info")]
+//     public string colorName;
+//     public AudioClip colorSound; // main bubble pop
+//     public AudioClip sparkleChime; // secondary chime layer
 
-//    private AudioSource audioSource;
-//    private bool hasBeenTapped = false;
+//     private bool hasBeenTapped = false;
 
-//    [Header("Movement Settings")]
-//    public float startSpeed = 8f;      // Fast at start
-//    public float slowDownRate = 2f;    // How quickly it slows
-//    public float minSpeed = 1f;        // Slowest speed
-//    private float currentSpeed;
+//     [Header("Movement Settings")]
+//     public float startSpeed = 8f;
+//     public float slowDownRate = 2f;
+//     public float minSpeed = 1f;
+//     private float currentSpeed;
 
-//    [Header("Scale Animation")]
-//    public float startScale = 0.3f;    // Small at start
-//    public float targetScale = 1f;     // Full size
-//    public float scaleSpeed = 2f;      // How fast it grows
-//    private bool scalingDone = false;
+//     [Header("Scale Animation")]
+//     public float startScale = 0.3f;
+//     public float targetScale = 1f;
+//     public float scaleSpeed = 2f;
+//     private bool scalingDone = false;
 
-//    [Header("Auto Destroy")]
-//    public float autoDestroyTime = 4f; // Time before auto destroy if not clicked
+//     [Header("Auto Destroy")]
+//     public float autoDestroyTime = 4f;
 
-//    private SpriteRenderer sr;
-//    private float lifeTimer = 0f;
+//     [Header("SFX Settings")]
+//     [Range(0f, 1f)] public float sfxVolume = 1f;
 
-//    private void Start()
-//    {
-//        // Setup audio
-//        audioSource = gameObject.AddComponent<AudioSource>();
-//        audioSource.playOnAwake = false;
+//     private SpriteRenderer sr;
+//     private float lifeTimer = 0f;
 
-//        // Start movement
-//        currentSpeed = startSpeed;
+//     public System.Action<string> OnColorDestroyed;
 
-//        // Start small
-//        transform.localScale = Vector3.one * startScale;
+//     public GameObject sparkleFXPrefab;
+//     public GameObject confettiFXPrefab;
+//     public GameObject colorTrailPrefab;
 
-//        // Get SpriteRenderer
-//        sr = GetComponent<SpriteRenderer>();
+//     private void Start()
+//     {
+//         currentSpeed = startSpeed;
+//         transform.localScale = Vector3.one * startScale;
+//         sr = GetComponent<SpriteRenderer>();
+//         if (sr != null) sr.sortingOrder = 5;
 
-//        // Ensure visible
-//        if (sr != null)
-//        {
-//            sr.sortingOrder = 5;
-//        }
-//    }
+//         // spawn animation
+//         transform.localScale = Vector3.zero;
+//         transform.DOScale(targetScale, 0.6f).SetEase(Ease.OutElastic);
+//         transform.DORotate(new Vector3(0, 0, Random.Range(-10f, 10f)), 0.5f)
+//                  .SetEase(Ease.OutSine);
 
-//    private void Update()
-//    {
-//        HandleMovement();
-//        HandleScaling();
-//        HandleAutoDestroy();
-//    }
+//         // spawn sparkles and trail
+//         SpawnSparkles();
+//         SpawnTrail();
+//     }
 
-//    private void HandleMovement()
-//    {
-//        transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
+//     private void SpawnTrail()
+//     {
+//         GameObject fx = colorTrailPrefab != null ? colorTrailPrefab : Resources.Load<GameObject>("ColorTrailFX");
+//         if (fx != null)
+//         {
+//             GameObject trail = Instantiate(fx, transform);
+//             var ps = trail.GetComponent<ParticleSystem>();
+//             if (ps != null)
+//             {
+//                 var main = ps.main;
+//                 if (sr != null) main.startColor = sr.color * 1.2f;
+//             }
+//         }
+//     }
 
-//        if (currentSpeed > minSpeed)
-//            currentSpeed -= slowDownRate * Time.deltaTime;
-//    }
+//     private void SpawnSparkles()
+//     {
+//         GameObject fx = sparkleFXPrefab != null ? sparkleFXPrefab : Resources.Load<GameObject>("SparkleFX");
+//         if (fx != null)
+//         {
+//             GameObject spawned = Instantiate(fx, transform.position, Quaternion.identity);
+//             spawned.transform.localScale = Vector3.one * 0.7f;
+//             Destroy(spawned, 1.5f);
+//         }
+//     }
 
-//    private void HandleScaling()
-//    {
-//        if (scalingDone) return;
+//     private void Update()
+//     {
+//         HandleMovement();
+//         HandleScaling();
+//         HandleAutoDestroy();
+//     }
 
-//        transform.localScale = Vector3.Lerp(
-//            transform.localScale,
-//            Vector3.one * targetScale,
-//            Time.deltaTime * scaleSpeed
-//        );
+//     private void HandleMovement()
+//     {
+//         transform.Translate(Vector2.down * currentSpeed * Time.deltaTime);
+//         if (currentSpeed > minSpeed)
+//             currentSpeed -= slowDownRate * Time.deltaTime;
+//     }
 
-//        if (Vector3.Distance(transform.localScale, Vector3.one * targetScale) < 0.01f)
-//        {
-//            transform.localScale = Vector3.one * targetScale;
-//            scalingDone = true;
-//        }
-//    }
+//     private void HandleScaling()
+//     {
+//         if (scalingDone) return;
+//         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * targetScale, Time.deltaTime * scaleSpeed);
+//         if (Vector3.Distance(transform.localScale, Vector3.one * targetScale) < 0.01f)
+//         {
+//             transform.localScale = Vector3.one * targetScale;
+//             scalingDone = true;
+//         }
+//     }
 
-//    private void HandleAutoDestroy()
-//    {
-//        if (hasBeenTapped) return;
+//     private void HandleAutoDestroy()
+//     {
+//         if (hasBeenTapped) return;
 
-//        lifeTimer += Time.deltaTime;
-//        if (lifeTimer >= autoDestroyTime)
-//        {
-//            Destroy(gameObject);
-//        }
-//    }
+//         lifeTimer += Time.deltaTime;
+//         if (lifeTimer >= autoDestroyTime)
+//         {
+//             OnColorDestroyed?.Invoke(colorName);
+//             Destroy(gameObject);
+//         }
+//     }
 
-//    private void OnMouseDown()
-//    {
-//        if (hasBeenTapped) return;
-//        hasBeenTapped = true;
+//     private void OnMouseDown()
+//     {
+//         if (hasBeenTapped) return;
+//         hasBeenTapped = true;
 
-//        if (colorSound != null)
-//            audioSource.PlayOneShot(colorSound);
+//         // 🎵 Play bubble pop + sparkle chime combo
+//         if (AudioManager.Instance != null)
+//             AudioManager.Instance.PlayLayeredSFX(colorSound, sparkleChime, sfxVolume);
 
-//        float delay = (colorSound != null) ? colorSound.length : 0f;
-//        Destroy(gameObject, delay);
-//    }
+//         // 🎉 bounce + shrink + effects
+//         transform.DOScale(targetScale * 1.3f, 0.2f).SetEase(Ease.OutBack)
+//             .OnComplete(() => transform.DOScale(0f, 0.3f).SetEase(Ease.InBack));
 
-//    public void SetColorInfo(string name, Color color, AudioClip clip)
-//    {
-//        colorName = name;
-//        colorSound = clip;
+//         SpawnConfetti();
+//         OnColorDestroyed?.Invoke(colorName);
 
-//        if (sr == null)
-//            sr = GetComponent<SpriteRenderer>();
+//         Destroy(gameObject, 0.5f);
+//     }
 
-//        if (sr != null)
-//        {
-//            color.a = 1f; // Ensure visible
-//            sr.color = color;
-//            sr.sortingOrder = 5;
-//        }
-//    }
-//}
+//     private void SpawnConfetti()
+//     {
+//         GameObject fx = confettiFXPrefab != null ? confettiFXPrefab : Resources.Load<GameObject>("ConfettiFX");
+//         if (fx != null)
+//         {
+//             GameObject spawned = Instantiate(fx, transform.position, Quaternion.identity);
+//             spawned.transform.localScale = Vector3.one * 1.2f;
+//             Destroy(spawned, 2f);
+//         }
 
+//         GameObject pulse = Resources.Load<GameObject>("TapPulseFX");
+//         if (pulse)
+//         {
+//             GameObject p = Instantiate(pulse, transform.position, Quaternion.identity);
+//             Destroy(p, 0.4f);
+//         }
+//     }
 
+//     public void SetColorInfo(string name, Color color, AudioClip clip)
+//     {
+//         colorName = name;
+//         colorSound = clip;
 
+//         if (sr == null)
+//             sr = GetComponent<SpriteRenderer>();
+
+//         if (sr != null)
+//         {
+//             color.a = 1f;
+//             sr.color = color;
+//             sr.sortingOrder = 5;
+//         }
+//     }
+// }
 
 
 using UnityEngine;
+using DG.Tweening;
 
 public class ColorManager : MonoBehaviour
 {
     [Header("Color Info")]
     public string colorName;
-    public AudioClip colorSound;
+    public AudioClip colorSound; // main bubble pop
 
-    private AudioSource audioSource;
+    [Header("Clips")]
+    public AudioClip sparkleChime; // secondary chime layer
+    
+    public AudioClip BubblePop;
+    public AudioClip BubbleSpawn;
+
     private bool hasBeenTapped = false;
 
     [Header("Movement Settings")]
@@ -151,21 +205,66 @@ public class ColorManager : MonoBehaviour
     [Header("Auto Destroy")]
     public float autoDestroyTime = 4f;
 
+    [Header("SFX Settings")]
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+
     private SpriteRenderer sr;
     private float lifeTimer = 0f;
 
-    public System.Action<string> OnColorDestroyed; // notify spawner when destroyed
+    public System.Action<string> OnColorDestroyed;
+
+    public GameObject sparkleFXPrefab;
+    public GameObject confettiFXPrefab;
+    public GameObject colorTrailPrefab;
 
     private void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
         currentSpeed = startSpeed;
         transform.localScale = Vector3.one * startScale;
         sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.sortingOrder = 5;
 
-        if (sr != null)
-            sr.sortingOrder = 5;
+        // // spawn animation
+        // transform.localScale = Vector3.zero;
+        // transform.DOScale(targetScale, 0.6f).SetEase(Ease.OutElastic);
+        // transform.DORotate(new Vector3(0, 0, Random.Range(-10f, 10f)), 0.5f)
+        //          .SetEase(Ease.OutSine);
+
+        // spawn sparkles and trail
+        SpawnSparkles();
+        SpawnTrail();
+        if (AudioManager.Instance != null)
+        {
+            AudioClip spawnClip = BubbleSpawn;//Resources.Load<AudioClip>("BubbleSpawn"); // optional
+            if (spawnClip != null)
+                AudioManager.Instance.PlaySFX(spawnClip, 0.3f);
+        }
+    }
+
+    private void SpawnTrail()
+    {
+        GameObject fx = colorTrailPrefab != null ? colorTrailPrefab : Resources.Load<GameObject>("ColorTrailFX");
+        if (fx != null)
+        {
+            GameObject trail = Instantiate(fx, transform);
+            var ps = trail.GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                var main = ps.main;
+                if (sr != null) main.startColor = sr.color * 1.2f;
+            }
+        }
+    }
+
+    private void SpawnSparkles()
+    {
+        GameObject fx = sparkleFXPrefab != null ? sparkleFXPrefab : Resources.Load<GameObject>("SparkleFX");
+        if (fx != null)
+        {
+            GameObject spawned = Instantiate(fx, transform.position, Quaternion.identity);
+            spawned.transform.localScale = Vector3.one * 0.7f;
+            Destroy(spawned, 1.5f);
+        }
     }
 
     private void Update()
@@ -185,13 +284,7 @@ public class ColorManager : MonoBehaviour
     private void HandleScaling()
     {
         if (scalingDone) return;
-
-        transform.localScale = Vector3.Lerp(
-            transform.localScale,
-            Vector3.one * targetScale,
-            Time.deltaTime * scaleSpeed
-        );
-
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * targetScale, Time.deltaTime * scaleSpeed);
         if (Vector3.Distance(transform.localScale, Vector3.one * targetScale) < 0.01f)
         {
             transform.localScale = Vector3.one * targetScale;
@@ -207,6 +300,12 @@ public class ColorManager : MonoBehaviour
         if (lifeTimer >= autoDestroyTime)
         {
             OnColorDestroyed?.Invoke(colorName);
+            if (AudioManager.Instance != null)
+            {
+                AudioClip vanishClip = BubblePop;//Resources.Load<AudioClip>("BubbleVanish"); // optional
+                if (vanishClip != null)
+                    AudioManager.Instance.PlaySFX(vanishClip, 0.4f);
+            }
             Destroy(gameObject);
         }
     }
@@ -216,18 +315,62 @@ public class ColorManager : MonoBehaviour
         if (hasBeenTapped) return;
         hasBeenTapped = true;
 
-        if (colorSound != null)
-            audioSource.PlayOneShot(colorSound);
+        // 🎵 Play bubble pop + sparkle chime combo
+        // if (AudioManager.Instance != null)
+        //     AudioManager.Instance.PlayLayeredSFX(colorSound, sparkleChime, sfxVolume);
 
-        float delay = (colorSound != null) ? colorSound.length : 0f;
+        if (AudioManager.Instance != null)
+        {
+            // 1️⃣ Play the universal pop first
+            AudioClip popClip = BubblePop;//Resources.Load<AudioClip>("BubblePop");
+            if (popClip != null)
+                AudioManager.Instance.PlaySFX(popClip, 0.8f);
+
+            // 2️⃣ After short delay, play the color’s voice clip
+            if (colorSound != null)
+                StartCoroutine(PlayColorSoundDelayed(0.25f));
+        }
+
+
+        // 🎉 bounce + shrink + effects
+        transform.DOScale(targetScale * 1.3f, 0.2f).SetEase(Ease.OutBack)
+            .OnComplete(() => transform.DOScale(0f, 0.3f).SetEase(Ease.InBack));
+
+        SpawnConfetti();
         OnColorDestroyed?.Invoke(colorName);
-        Destroy(gameObject, delay);
+
+        Destroy(gameObject, 0.5f);
+    }
+    
+    private System.Collections.IEnumerator PlayColorSoundDelayed(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AudioManager.Instance?.PlaySFX(colorSound, sfxVolume);
     }
 
-    public void SetColorInfo(string name, Color color, AudioClip clip)
+    private void SpawnConfetti()
+    {
+        GameObject fx = confettiFXPrefab != null ? confettiFXPrefab : Resources.Load<GameObject>("ConfettiFX");
+        if (fx != null)
+        {
+            GameObject spawned = Instantiate(fx, transform.position, Quaternion.identity);
+            spawned.transform.localScale = Vector3.one * 1.2f;
+            Destroy(spawned, 2f);
+        }
+
+        GameObject pulse = Resources.Load<GameObject>("TapPulseFX");
+        if (pulse)
+        {
+            GameObject p = Instantiate(pulse, transform.position, Quaternion.identity);
+            Destroy(p, 0.4f);
+        }
+    }
+
+    public void SetColorInfo(string name, Color color, AudioClip clip, AudioClip chime = null)
     {
         colorName = name;
         colorSound = clip;
+        sparkleChime = chime;
 
         if (sr == null)
             sr = GetComponent<SpriteRenderer>();
@@ -240,10 +383,3 @@ public class ColorManager : MonoBehaviour
         }
     }
 }
-
-
-
-
-
-
-

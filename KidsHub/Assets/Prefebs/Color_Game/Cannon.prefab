@@ -105,9 +105,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorSpawner
   colorPrefab: {fileID: 1315325642366183848, guid: 367010c91218e414cbff4bfa15db6122, type: 3}
-  spawnPoints: []
-  colorList: []
-  spawnDelay: 2
+  spawnPoints:
+  - {fileID: 2143056917080465940}
+  colorList:
+  - colorName: Blue
+    colorValue: {r: 0, g: 0, b: 1, a: 0}
+    colorClip: {fileID: 8300000, guid: 3c8f0b96e2cb641b0ba6b6ec2d42707b, type: 3}
+  - colorName: bronze
+    colorValue: {r: 0.8039216, g: 0.49803922, b: 0.19607843, a: 0}
+    colorClip: {fileID: 8300000, guid: 8743f4d6ff7f64e6ea16c3d429b26686, type: 3}
+  - colorName: 'Yellow '
+    colorValue: {r: 1, g: 1, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: 530218c82798a4ea5bb072503b35a7ce, type: 3}
+  - colorName: 'Sea Green  '
+    colorValue: {r: 0.18039216, g: 0.54509807, b: 0.34117648, a: 0}
+    colorClip: {fileID: 8300000, guid: 6a9e1f47a665441debdcec5fef70ff39, type: 3}
+  - colorName: ' Red'
+    colorValue: {r: 1, g: 0, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: 7232cd9bca21c493ca924ed2f55bad75, type: 3}
+  - colorName: 'Purple '
+    colorValue: {r: 0.5019608, g: 0, b: 0.5019608, a: 0}
+    colorClip: {fileID: 8300000, guid: ceeb99fa481874fadb0825b9b7964d53, type: 3}
+  - colorName: 'Orange  '
+    colorValue: {r: 1, g: 0.64705884, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: c8cde3294590d4ec7bc4191b7e1da1e4, type: 3}
+  - colorName: Olive
+    colorValue: {r: 0.5019608, g: 0.5019608, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: d3ab2d1ca70eb4722a0de7d9dd13fbc7, type: 3}
+  - colorName: 'Navy Blue '
+    colorValue: {r: 0, g: 0, b: 0.5019608, a: 0}
+    colorClip: {fileID: 8300000, guid: f04cf8b1e7f574154a304062db5f3135, type: 3}
+  - colorName: 'Maroon '
+    colorValue: {r: 0.5019608, g: 0, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: a2a0a0de7ffe648509aae530937c4d8b, type: 3}
+  - colorName: Magenta
+    colorValue: {r: 1, g: 0, b: 1, a: 0}
+    colorClip: {fileID: 8300000, guid: 564efb9d016414dd893934b5f65e394c, type: 3}
+  - colorName: 'Hot Pink  '
+    colorValue: {r: 1, g: 0.4117647, b: 0.7058824, a: 0}
+    colorClip: {fileID: 8300000, guid: 1914c6a2afd544cd4b96b5a76214b048, type: 3}
+  - colorName: 'Green  '
+    colorValue: {r: 0, g: 0.5019608, b: 0, a: 0}
+    colorClip: {fileID: 8300000, guid: 34a2486cc80db4e5babf5985a7c6dbe6, type: 3}
+  - colorName: 'Gray  '
+    colorValue: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+    colorClip: {fileID: 8300000, guid: 77aaa067853ea4f6a814011ebdd7650b, type: 3}
+  - colorName: 'Coral  '
+    colorValue: {r: 1, g: 0.49803922, b: 0.3137255, a: 0}
+    colorClip: {fileID: 8300000, guid: 6f0170c1f39d34ac9aca5d30ac99cb86, type: 3}
+  - colorName: 'Charcoal  '
+    colorValue: {r: 0.21176471, g: 0.27058825, b: 0.30980393, a: 0}
+    colorClip: {fileID: 8300000, guid: 6e8e8c6e0f06c41d7a1fcfd9374a5066, type: 3}
+  - colorName: 'Coral  '
+    colorValue: {r: 1, g: 0.49803922, b: 0.3137255, a: 0}
+    colorClip: {fileID: 8300000, guid: 6f0170c1f39d34ac9aca5d30ac99cb86, type: 3}
+  spawnDelay: 6
+  backgroundMusic: {fileID: 8300000, guid: 1ab416edb7d87e24c84ad0357c8388ed, type: 3}
+  musicVolume: 0.125
 --- !u!1 &8717844890470916027
 GameObject:
   m_ObjectHideFlags: 0
