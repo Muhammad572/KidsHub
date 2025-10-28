@@ -3087,7 +3087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1491713630
 Transform:
   m_ObjectHideFlags: 0
@@ -4002,8 +4002,8 @@ MonoBehaviour:
   correctParticlePrefab: {fileID: 2162853576904444263, guid: 83baadbf3387b4e509a9aefdfd8e1f12, type: 3}
   wrongParticlePrefab: {fileID: 2094013159393351482, guid: ef6e4bb93861c41188c5ed1808dd6eed, type: 3}
   targetCanvasGroup: {fileID: 0}
-  rows: 3
-  columns: 6
+  rows: 6
+  columns: 8
   spacing: {x: 10, y: 10}
   gridParent: {fileID: 1699900203}
   fruitPrefab: {fileID: 8491747746344700346, guid: e810647aee7b84dae87a80f0928c04dc, type: 3}
@@ -4073,8 +4073,23 @@ MonoBehaviour:
   targetFruitImage: {fileID: 120088135}
   backgroundMusicVolume: 0.125
   backgroundMusic: {fileID: 8300000, guid: 0d8759a171249490f9c5be450f26de2c, type: 3}
-  correctSound: {fileID: 8300000, guid: 74dadf5e7350c40ebb202c944dd6ad6d, type: 3}
   wrongSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
+  successClip: {fileID: 8300000, guid: 74dadf5e7350c40ebb202c944dd6ad6d, type: 3}
+  correctSounds:
+  - {fileID: 8300000, guid: 3997ebd26993d4d8cad9b15916225e94, type: 3}
+  - {fileID: 8300000, guid: 3fa3d38256e084934b6969d60ca4d7ff, type: 3}
+  - {fileID: 8300000, guid: c0e668a0a6ec14377999bfa2568875c1, type: 3}
+  - {fileID: 8300000, guid: ea68253b25c9b45829c025640de73007, type: 3}
+  - {fileID: 8300000, guid: 364c21c5651bc4d9eb35f0fb34ca54f5, type: 3}
+  - {fileID: 8300000, guid: 344829f0a7f624d8195315139f52662b, type: 3}
+  - {fileID: 8300000, guid: 3cf122cc8c40c4b0da6d33f336598f33, type: 3}
+  - {fileID: 8300000, guid: e2145a988230f4e08a8ad6d6b53cbecb, type: 3}
+  - {fileID: 8300000, guid: a606a57adec8544a3aad5a95c8eb8d44, type: 3}
+  - {fileID: 8300000, guid: 78a6feb1c93a74bc3ba39be0bd3daf0e, type: 3}
+  - {fileID: 8300000, guid: 01452c67b6b304c8593a6007278f3e94, type: 3}
+  - {fileID: 8300000, guid: 9c3aa8970206e4a9f897f24970055c8c, type: 3}
+  - {fileID: 8300000, guid: afe9161fdd3e342e8a4729e30860d2b1, type: 3}
+  - {fileID: 8300000, guid: 12769a0fa4245414fa6dd3f26cfe5869, type: 3}
   loadingScreenPrefab: {fileID: 1451750212}
   initialLoadingDuration: 3
 --- !u!224 &2002116210
