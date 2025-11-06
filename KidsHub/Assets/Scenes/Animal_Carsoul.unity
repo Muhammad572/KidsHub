@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &112624959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,6 +1681,7 @@ MonoBehaviour:
   scaleSize: 50
   backgroundMusic: {fileID: 8300000, guid: 9cf3f8acd1756470e953edf122f1eaab, type: 3}
   musicVolume: 0.12
+  animalSoundVolume: 1
   wrongAnswerClip: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
   successAnswerClip: {fileID: 8300000, guid: 71e59037ec222413f98a57ec89195724, type: 3}
   loadingScreenPrefab: {fileID: 2030465503}

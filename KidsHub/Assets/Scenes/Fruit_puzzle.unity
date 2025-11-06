@@ -3999,7 +3999,7 @@ MonoBehaviour:
   fruitPopDuration: 0.4
   correctBounceScale: 1.2
   wrongShakeStrength: 10
-  correctParticlePrefab: {fileID: 2162853576904444263, guid: 83baadbf3387b4e509a9aefdfd8e1f12, type: 3}
+  correctParticlePrefab: {fileID: 6386168380217604268, guid: 17658a3b0cd30482696631fcb3b022cc, type: 3}
   wrongParticlePrefab: {fileID: 2094013159393351482, guid: ef6e4bb93861c41188c5ed1808dd6eed, type: 3}
   targetCanvasGroup: {fileID: 0}
   rows: 6
@@ -4074,7 +4074,7 @@ MonoBehaviour:
   backgroundMusicVolume: 0.125
   backgroundMusic: {fileID: 8300000, guid: 0d8759a171249490f9c5be450f26de2c, type: 3}
   wrongSound: {fileID: 8300000, guid: 85cda4bbd55794fffa16a7c4a01319f1, type: 3}
-  successClip: {fileID: 8300000, guid: 74dadf5e7350c40ebb202c944dd6ad6d, type: 3}
+  successClip: {fileID: 8300000, guid: 71e59037ec222413f98a57ec89195724, type: 3}
   correctSounds:
   - {fileID: 8300000, guid: 3997ebd26993d4d8cad9b15916225e94, type: 3}
   - {fileID: 8300000, guid: 3fa3d38256e084934b6969d60ca4d7ff, type: 3}
@@ -4092,6 +4092,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 12769a0fa4245414fa6dd3f26cfe5869, type: 3}
   loadingScreenPrefab: {fileID: 1451750212}
   initialLoadingDuration: 3
+  glowRingPrefab: {fileID: 0}
+  starTrailPrefab: {fileID: 0}
 --- !u!224 &2002116210
 RectTransform:
   m_ObjectHideFlags: 0

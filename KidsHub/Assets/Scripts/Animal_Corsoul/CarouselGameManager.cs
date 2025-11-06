@@ -43,6 +43,8 @@ public class AnimalGridGameManager : MonoBehaviour
     public AudioClip backgroundMusic;
     [Range(0f, 1f)]
     public float musicVolume = 0.6f;
+    [Range(0f, 1f)]
+    public float animalSoundVolume = 1f; // 🔊 Controls animal sound clip volume
     public AudioClip wrongAnswerClip;
     public AudioClip successAnswerClip; 
 
@@ -252,7 +254,8 @@ public class AnimalGridGameManager : MonoBehaviour
             // 2️⃣ Play animal sound & flip at the same time
             if (AudioManager.Instance != null && animalSound != null)
             {
-                AudioManager.Instance.PlaySFX(animalSound);
+                // AudioManager.Instance.PlaySFX(animalSound);
+                AudioManager.Instance.PlaySFX(animalSound, animalSoundVolume);
             }
             yield return StartCoroutine(FlipCard(correctCardRect, flipDuration));
 

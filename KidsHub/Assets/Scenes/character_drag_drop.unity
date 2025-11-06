@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &579550477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   completeSound: {fileID: 8300000, guid: de36a26fcf285ba4fa10de1dbbac7550, type: 3}
   completeSoundVolume: 0.8
   backgroundMusic: {fileID: 8300000, guid: a6b6646c50cb3a94cb9626f77258d23f, type: 3}
-  backgroundMusicVolume: 0.125
+  backgroundMusicVolume: 0.015
   confettiPrefab: {fileID: 4538369147646368620, guid: 815d9b23e36a44de7a3f5522adb0f962, type: 3}
   wordArea: {fileID: 936099375}
 --- !u!4 &944573727
@@ -1466,7 +1466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1663183506
 MonoBehaviour:
   m_ObjectHideFlags: 0

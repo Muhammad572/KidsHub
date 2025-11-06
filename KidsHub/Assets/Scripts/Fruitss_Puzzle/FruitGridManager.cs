@@ -52,6 +52,9 @@
 //     private int lastTargetFruitID = -1;
 //     private int totalFruits => fruitSprites?.Count ?? 0;
 
+
+//     private int lastCorrectSoundIndex = -1;
+
 //     void Start()
 //     {
 //         StartCoroutine(ShowInitialLoadingScreen());
@@ -180,7 +183,7 @@
 //             fruits.Add(fruit);
 //         }
 
-//         EnsureTargetFruitExists();
+//         ForceTargetFruitMultipleTimes();
 //         Debug.Log($"[FruitGridManager] Created {fruits.Count} fruit cells.");
 //         // ✨ Animate fruit pop-in
 //         foreach (var fruit in fruits)
@@ -192,22 +195,53 @@
 //         }
 //     }
 
-//     void EnsureTargetFruitExists()
+//     // void EnsureTargetFruitExists()
+//     // {
+//     //     if (targetFruitID < 0 || targetFruitID >= totalFruits || fruits.Count == 0)
+//     //         return;
+
+//     //     bool hasTarget = false;
+//     //     foreach (var f in fruits)
+//     //         if (f.fruitID == targetFruitID) { hasTarget = true; break; }
+
+//     //     if (!hasTarget)
+//     //     {
+//     //         int replaceIndex = Random.Range(0, fruits.Count);
+//     //         fruits[replaceIndex].Init(this, fruitSprites[targetFruitID], targetFruitID);
+//     //         Debug.Log($"[FruitGridManager] Target fruit added at cell {replaceIndex}");
+//     //     }
+//     // }
+
+//     void ForceTargetFruitMultipleTimes()
+// {
+//     if (fruits == null || fruits.Count == 0 || targetFruitID < 0)
+//         return;
+
+//     int minTarget = 3;
+//     int maxTarget = 6;
+//     int targetCount = Random.Range(minTarget, maxTarget + 1); // inclusive upper bound
+
+//     // Ensure we don't exceed grid size
+//     targetCount = Mathf.Min(targetCount, fruits.Count);
+
+//     // Pick unique random indices
+//     List<int> indices = new List<int>();
+//     while (indices.Count < targetCount)
 //     {
-//         if (targetFruitID < 0 || targetFruitID >= totalFruits || fruits.Count == 0)
-//             return;
-
-//         bool hasTarget = false;
-//         foreach (var f in fruits)
-//             if (f.fruitID == targetFruitID) { hasTarget = true; break; }
-
-//         if (!hasTarget)
-//         {
-//             int replaceIndex = Random.Range(0, fruits.Count);
-//             fruits[replaceIndex].Init(this, fruitSprites[targetFruitID], targetFruitID);
-//             Debug.Log($"[FruitGridManager] Target fruit added at cell {replaceIndex}");
-//         }
+//         int randomIndex = Random.Range(0, fruits.Count);
+//         if (!indices.Contains(randomIndex))
+//             indices.Add(randomIndex);
 //     }
+
+//     // Replace selected cells with the target fruit
+//     foreach (int idx in indices)
+//     {
+//         fruits[idx].Init(this, fruitSprites[targetFruitID], targetFruitID);
+//     }
+
+//     Debug.Log($"[FruitGridManager] Target fruit forced {targetCount} times this round.");
+// }
+
 
 //     void PickNewTarget()
 //     {
@@ -253,7 +287,9 @@
 //         {
 //             if (AudioManager.Instance != null && correctSounds.Count > 0)
 //             {
-//                 int randomIndex = Random.Range(0, correctSounds.Count);
+//                 // int randomIndex = Random.Range(0, correctSounds.Count);
+//                 // AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
+//                 int randomIndex = GetUniqueRandomCorrectSoundIndex();
 //                 AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
 //             }
 
@@ -282,6 +318,24 @@
 //                 Instantiate(wrongParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
 //         }
 //     }
+
+
+//     int GetUniqueRandomCorrectSoundIndex()
+//     {
+//         if (correctSounds == null || correctSounds.Count == 0)
+//             return 0;
+
+//         int index;
+//         do
+//         {
+//             index = Random.Range(0, correctSounds.Count);
+//         }
+//         while (index == lastCorrectSoundIndex && correctSounds.Count > 1);
+
+//         lastCorrectSoundIndex = index;
+//         return index;
+//     }
+
 
 
 //     IEnumerator HandleRoundCompletion()
@@ -371,7 +425,7 @@
 //         // Shuffle and new target
 //         PickNewTarget();
 //         ShuffleGrid();
-//         EnsureTargetFruitExists();
+//         ForceTargetFruitMultipleTimes();
 
 //         // Pop-in new fruits
 //         foreach (var fruit in fruits)
@@ -449,6 +503,7 @@
 //     }
 // }
 
+
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -502,6 +557,13 @@ public class FruitGridManager : MonoBehaviour
     private int targetFruitID = -1;
     private int lastTargetFruitID = -1;
     private int totalFruits => fruitSprites?.Count ?? 0;
+
+
+    private int lastCorrectSoundIndex = -1;
+
+    [Header("Extra Visual Effects")]
+    public GameObject glowRingPrefab;
+    public GameObject starTrailPrefab;
 
     void Start()
     {
@@ -735,7 +797,9 @@ public class FruitGridManager : MonoBehaviour
         {
             if (AudioManager.Instance != null && correctSounds.Count > 0)
             {
-                int randomIndex = Random.Range(0, correctSounds.Count);
+                // int randomIndex = Random.Range(0, correctSounds.Count);
+                // AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
+                int randomIndex = GetUniqueRandomCorrectSoundIndex();
                 AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
             }
 
@@ -745,9 +809,38 @@ public class FruitGridManager : MonoBehaviour
             clicked.MarkAsSelected(selected);
 
             // ✨ Animate correct selection
-            clicked.transform.DOPunchScale(Vector3.one * 0.3f, 0.4f, 8, 0.5f);
+            // clicked.transform.DOPunchScale(Vector3.one * 0.3f, 0.4f, 8, 0.5f);
+            // if (correctParticlePrefab != null)
+            //     Instantiate(correctParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
+
+            // ✨ Animate correct selection — juicy version
+            clicked.transform.DOKill();
+            clicked.transform.DOPunchScale(Vector3.one * 0.25f, 0.4f, 10, 0.7f);
+            clicked.transform.DOShakeRotation(0.3f, 10f, 8, 80f, false);
+
             if (correctParticlePrefab != null)
+            {
+                // 🌟 Main burst
                 Instantiate(correctParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
+            }
+
+            // 🌈 Add layered effects (if prefabs assigned)
+            if (correctParticlePrefab != null)
+            {
+                Vector3 pos = clicked.transform.position;
+
+                // Optional: glow ring
+                if (glowRingPrefab != null)
+                    Instantiate(glowRingPrefab, pos, Quaternion.identity, gridParent);
+
+                // Optional: trail sparkles
+                if (starTrailPrefab != null)
+                    Instantiate(starTrailPrefab, pos, Quaternion.identity, gridParent);
+            }
+
+            // 🎶 Light bounce of entire grid (fun feedback)
+            gridParent.DOShakePosition(0.25f, 15f, 8, 90, false, true);
+
 
             // ✅ Only trigger round end when all target fruits are found
             if (!HasUnselectedTargetFruits())
@@ -764,6 +857,24 @@ public class FruitGridManager : MonoBehaviour
                 Instantiate(wrongParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
         }
     }
+
+
+    int GetUniqueRandomCorrectSoundIndex()
+    {
+        if (correctSounds == null || correctSounds.Count == 0)
+            return 0;
+
+        int index;
+        do
+        {
+            index = Random.Range(0, correctSounds.Count);
+        }
+        while (index == lastCorrectSoundIndex && correctSounds.Count > 1);
+
+        lastCorrectSoundIndex = index;
+        return index;
+    }
+
 
 
     IEnumerator HandleRoundCompletion()
