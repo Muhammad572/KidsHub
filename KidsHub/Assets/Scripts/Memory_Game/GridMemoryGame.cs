@@ -110,79 +110,7 @@
 //         sfxSource.playOnAwake = false;
 //     }
 
-//     // IEnumerator StartNewRound()
-//     // {
-//     //     canClick = false;
-
-//     //     // Clear old grid
-//     //     foreach (Transform child in gridContainer)
-//     //         Destroy(child.gameObject);
-//     //     allButtons.Clear();
-//     //     assignedSprites.Clear();
-
-//     //     // --- ADD THIS LOGIC BACK ---
-
-//     //     // Choose new correct image
-//     //     if (boxImageList.Count == 0)
-//     //         boxImageList = imageList;
-//     //     correctSprite = boxImageList[Random.Range(0, boxImageList.Count)];
-
-//     //     // Reset top image
-//     //     topBoxImage.sprite = defaultBoxImage;
-
-//     //     // Pick unique images for this round
-//     //     List<Sprite> shuffled = new List<Sprite>(imageList);
-//     //     Shuffle(shuffled);
-//     //     int totalCards = rows * columns;
-//     //     // This is the line that fixes CS0103
-//     //     List<Sprite> chosenSprites = shuffled.GetRange(0, Mathf.Min(totalCards, shuffled.Count));
-
-//     //     // Replace one random image with correctSprite
-//     //     int matchIndex = Random.Range(0, chosenSprites.Count);
-//     //     chosenSprites[matchIndex] = correctSprite;
-
-//     //     // --- END OF ADDED LOGIC ---
-
-//     //     // Spawn cards
-//     //     for (int i = 0; i < chosenSprites.Count; i++)
-//     //     {
-//     //         // --- ADD THIS LOGIC BACK ---
-//     //         GameObject card = Instantiate(buttonPrefab, gridContainer);
-//     //         assignedSprites.Add(chosenSprites[i]);
-
-//     //         Transform cardImage = card.transform.Find("CardImage");
-//     //         Transform numberImage = card.transform.Find("NumberImage");
-
-//     //         if (cardImage)
-//     //         {
-//     //             cardImage.gameObject.SetActive(true); // ✅ ensure front is active
-//     //             cardImage.GetComponent<Image>().sprite = chosenSprites[i];
-//     //         }
-
-//     //         if (numberImage)
-//     //         {
-//     //             numberImage.gameObject.SetActive(false); // ✅ ensure back is hidden
-//     //             if (tempNumberSprites != null && i < tempNumberSprites.Count)
-//     //                 numberImage.GetComponent<Image>().sprite = tempNumberSprites[i];
-//     //         }
-
-//     //         int index = i;
-//     //         card.GetComponent<Button>().onClick.AddListener(() => OnCardClicked(index));
-
-//     //         allButtons.Add(card);
-//     //         // --- END OF ADDED LOGIC ---
-//     //     }
-
-//     //     // 🔹 Force Canvas to update and render the cards before countdown
-//     //     Canvas.ForceUpdateCanvases();
-//     //     yield return null;  // Wait a frame so the UI updates
-
-//     //     // This method now correctly stops here.
-//     //     // The memorize/play logic is now in MemorizeAndPlayPhase()
-//     // }
-
-
-//     IEnumerator StartNewRound()
+// IEnumerator StartNewRound()
 // {
 //     canClick = false;
 
@@ -201,29 +129,67 @@
 //     topBoxImage.sprite = defaultBoxImage;
 
 //     // --- STEP 2: Pick unique images ---
-//     int totalCards = rows * columns; // should be 6
-//     List<Sprite> shuffled = new List<Sprite>(imageList);
-//     Shuffle(shuffled);
-
-//     // Ensure we have enough unique images to fill the grid
-//     if (shuffled.Count < totalCards)
+//     int totalCards = rows * columns;
+    
+//     // Create a pool of available sprites (excluding the correct sprite initially)
+//     List<Sprite> availableSprites = new List<Sprite>();
+    
+//     // Add all unique sprites from imageList
+//     foreach (Sprite sprite in imageList)
 //     {
-//         Debug.LogWarning($"⚠️ Not enough unique images! You have {shuffled.Count}, need {totalCards}.");
+//         if (!availableSprites.Contains(sprite))
+//             availableSprites.Add(sprite);
 //     }
 
-//     // Get only unique images
-//     HashSet<Sprite> uniqueSet = new HashSet<Sprite>();
-//     foreach (Sprite s in shuffled)
+//     // Make sure we have enough unique sprites
+//     if (availableSprites.Count < totalCards)
 //     {
-//         uniqueSet.Add(s);
-//         if (uniqueSet.Count >= totalCards) break;
+//         Debug.LogWarning($"⚠️ Not enough unique images! You have {availableSprites.Count}, need {totalCards}. Some images will be duplicated.");
+        
+//         // If we don't have enough unique sprites, we'll need to duplicate some
+//         // but we'll shuffle them to minimize obvious patterns
+//         int originalCount = availableSprites.Count;
+//         for (int i = 0; i < totalCards - originalCount; i++)
+//         {
+//             availableSprites.Add(availableSprites[i % originalCount]);
+//         }
 //     }
 
-//     List<Sprite> chosenSprites = new List<Sprite>(uniqueSet);
+//     // Shuffle the available sprites
+//     Shuffle(availableSprites);
 
-//     // --- STEP 3: Inject the correct sprite randomly ---
+//     // Take exactly the number we need
+//     List<Sprite> chosenSprites = availableSprites.GetRange(0, totalCards);
+
+//     // --- STEP 3: Replace one random sprite with the correct sprite ---
+//     // Remove the correct sprite from chosenSprites if it already exists (to avoid duplicates)
+//     if (chosenSprites.Contains(correctSprite))
+//     {
+//         // Find and remove the existing correct sprite
+//         chosenSprites.Remove(correctSprite);
+//         // Add one more random sprite to maintain count
+//         List<Sprite> extraSprites = new List<Sprite>(availableSprites);
+//         foreach (Sprite sprite in chosenSprites)
+//         {
+//             extraSprites.Remove(sprite);
+//         }
+//         if (extraSprites.Count > 0)
+//         {
+//             chosenSprites.Add(extraSprites[Random.Range(0, extraSprites.Count)]);
+//         }
+//         else
+//         {
+//             // Fallback: use any available sprite
+//             chosenSprites.Add(availableSprites[Random.Range(0, availableSprites.Count)]);
+//         }
+//     }
+    
+//     // Now inject the correct sprite at a random position
 //     int matchIndex = Random.Range(0, chosenSprites.Count);
 //     chosenSprites[matchIndex] = correctSprite;
+
+//     // Final shuffle to randomize positions
+//     Shuffle(chosenSprites);
 
 //     // --- STEP 4: Spawn cards in grid ---
 //     for (int i = 0; i < chosenSprites.Count; i++)
@@ -257,7 +223,8 @@
 //     yield return null;
 // }
 
-    
+
+
 //     IEnumerator CorrectCardSequence()
 //     {
 //         canClick = false;
@@ -565,13 +532,13 @@
 
 
 
-
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using System; // Added for Action delegate
 
 public class GridMemoryGame : MonoBehaviour
 {
@@ -632,15 +599,37 @@ public class GridMemoryGame : MonoBehaviour
         StartCoroutine(GameStartSequence());
     }
 
+    
+
     IEnumerator GameStartSequence()
     {
-        // Show loading at game start
+        // 1. Show loading screen and wait for the duration
         yield return StartCoroutine(ShowLoadingScreen());
         
-        // 1. Populate the grid
-        yield return StartCoroutine(StartNewRound()); 
+        // Wait for the mandatory initial loading duration
+        yield return new WaitForSeconds(loadingDuration); 
         
-        // 2. Run the memorize/play sequence
+        // --- FIX: Explicitly hide the loading screen after the initial wait ---
+        if (loadingScreenPrefab != null && loadingScreenPrefab.activeSelf)
+        {
+            // Safely fade out if a canvas group exists, otherwise just deactivate
+            CanvasGroup cg = loadingScreenPrefab.GetComponent<CanvasGroup>();
+            if (cg != null)
+            {
+                cg.DOFade(0f, 0.3f).OnComplete(() => loadingScreenPrefab.SetActive(false));
+                yield return new WaitForSeconds(0.3f); // Wait for fade out
+            }
+            else
+            {
+                loadingScreenPrefab.SetActive(false);
+            }
+        }
+        // ----------------------------------------------------------------------
+        
+        // 2. Populate the grid
+        yield return StartCoroutine(StartNewRoundSetup()); 
+        
+        // 3. Run the memorize/play sequence
         yield return StartCoroutine(MemorizeAndPlayPhase());
     }
 
@@ -662,8 +651,6 @@ public class GridMemoryGame : MonoBehaviour
 
     void SetupAudioSources()
     {
-        if (AudioManager.Instance != null && AudioManager.Instance.musicSource != null)
-            AudioManager.Instance.musicSource.Stop();
         if (bgMusicSource == null)
             bgMusicSource = gameObject.AddComponent<AudioSource>();
 
@@ -678,119 +665,118 @@ public class GridMemoryGame : MonoBehaviour
         sfxSource.playOnAwake = false;
     }
 
-IEnumerator StartNewRound()
-{
-    canClick = false;
-
-    // Clear old grid
-    foreach (Transform child in gridContainer)
-        Destroy(child.gameObject);
-    allButtons.Clear();
-    assignedSprites.Clear();
-
-    // --- STEP 1: Choose the correct image ---
-    if (boxImageList == null || boxImageList.Count == 0)
-        boxImageList = new List<Sprite>(imageList);
-    correctSprite = boxImageList[Random.Range(0, boxImageList.Count)];
-
-    // Reset top image
-    topBoxImage.sprite = defaultBoxImage;
-
-    // --- STEP 2: Pick unique images ---
-    int totalCards = rows * columns;
-    
-    // Create a pool of available sprites (excluding the correct sprite initially)
-    List<Sprite> availableSprites = new List<Sprite>();
-    
-    // Add all unique sprites from imageList
-    foreach (Sprite sprite in imageList)
+    IEnumerator StartNewRoundSetup()
     {
-        if (!availableSprites.Contains(sprite))
-            availableSprites.Add(sprite);
-    }
+        canClick = false;
 
-    // Make sure we have enough unique sprites
-    if (availableSprites.Count < totalCards)
-    {
-        Debug.LogWarning($"⚠️ Not enough unique images! You have {availableSprites.Count}, need {totalCards}. Some images will be duplicated.");
+        // Clear old grid
+        foreach (Transform child in gridContainer)
+            Destroy(child.gameObject);
+        allButtons.Clear();
+        assignedSprites.Clear();
+
+        // --- STEP 1: Choose the correct image ---
+        if (boxImageList == null || boxImageList.Count == 0)
+            boxImageList = new List<Sprite>(imageList);
+        correctSprite = boxImageList[UnityEngine.Random.Range(0, boxImageList.Count)];
+
+        // Reset top image
+        topBoxImage.sprite = defaultBoxImage;
+
+        // --- STEP 2: Pick unique images ---
+        int totalCards = rows * columns;
         
-        // If we don't have enough unique sprites, we'll need to duplicate some
-        // but we'll shuffle them to minimize obvious patterns
-        int originalCount = availableSprites.Count;
-        for (int i = 0; i < totalCards - originalCount; i++)
+        // Create a pool of available sprites (excluding the correct sprite initially)
+        List<Sprite> availableSprites = new List<Sprite>();
+        
+        // Add all unique sprites from imageList
+        foreach (Sprite sprite in imageList)
         {
-            availableSprites.Add(availableSprites[i % originalCount]);
+            if (!availableSprites.Contains(sprite))
+                availableSprites.Add(sprite);
         }
+
+        // Make sure we have enough unique sprites
+        if (availableSprites.Count < totalCards)
+        {
+            Debug.LogWarning($"⚠️ Not enough unique images! You have {availableSprites.Count}, need {totalCards}. Some images will be duplicated.");
+            
+            // If we don't have enough unique sprites, we'll need to duplicate some
+            // but we'll shuffle them to minimize obvious patterns
+            int originalCount = availableSprites.Count;
+            for (int i = 0; i < totalCards - originalCount; i++)
+            {
+                availableSprites.Add(availableSprites[i % originalCount]);
+            }
+        }
+
+        // Shuffle the available sprites
+        Shuffle(availableSprites);
+
+        // Take exactly the number we need
+        List<Sprite> chosenSprites = availableSprites.GetRange(0, totalCards);
+
+        // --- STEP 3: Replace one random sprite with the correct sprite ---
+        // Remove the correct sprite from chosenSprites if it already exists (to avoid duplicates)
+        if (chosenSprites.Contains(correctSprite))
+        {
+            // Find and remove the existing correct sprite
+            chosenSprites.Remove(correctSprite);
+            // Add one more random sprite to maintain count
+            List<Sprite> extraSprites = new List<Sprite>(availableSprites);
+            foreach (Sprite sprite in chosenSprites)
+            {
+                extraSprites.Remove(sprite);
+            }
+            if (extraSprites.Count > 0)
+            {
+                chosenSprites.Add(extraSprites[UnityEngine.Random.Range(0, extraSprites.Count)]);
+            }
+            else
+            {
+                // Fallback: use any available sprite
+                chosenSprites.Add(availableSprites[UnityEngine.Random.Range(0, availableSprites.Count)]);
+            }
+        }
+        
+        // Now inject the correct sprite at a random position
+        int matchIndex = UnityEngine.Random.Range(0, chosenSprites.Count);
+        chosenSprites[matchIndex] = correctSprite;
+
+        // Final shuffle to randomize positions
+        Shuffle(chosenSprites);
+
+        // --- STEP 4: Spawn cards in grid ---
+        for (int i = 0; i < chosenSprites.Count; i++)
+        {
+            GameObject card = Instantiate(buttonPrefab, gridContainer);
+            assignedSprites.Add(chosenSprites[i]);
+
+            Transform cardImage = card.transform.Find("CardImage");
+            Transform numberImage = card.transform.Find("NumberImage");
+
+            if (cardImage)
+            {
+                cardImage.gameObject.SetActive(true);
+                cardImage.GetComponent<Image>().sprite = chosenSprites[i];
+            }
+
+            if (numberImage)
+            {
+                numberImage.gameObject.SetActive(false);
+                if (tempNumberSprites != null && i < tempNumberSprites.Count)
+                    numberImage.GetComponent<Image>().sprite = tempNumberSprites[i];
+            }
+
+            int index = i;
+            card.GetComponent<Button>().onClick.AddListener(() => OnCardClicked(index));
+
+            allButtons.Add(card);
+        }
+
+        Canvas.ForceUpdateCanvases();
+        yield return null;
     }
-
-    // Shuffle the available sprites
-    Shuffle(availableSprites);
-
-    // Take exactly the number we need
-    List<Sprite> chosenSprites = availableSprites.GetRange(0, totalCards);
-
-    // --- STEP 3: Replace one random sprite with the correct sprite ---
-    // Remove the correct sprite from chosenSprites if it already exists (to avoid duplicates)
-    if (chosenSprites.Contains(correctSprite))
-    {
-        // Find and remove the existing correct sprite
-        chosenSprites.Remove(correctSprite);
-        // Add one more random sprite to maintain count
-        List<Sprite> extraSprites = new List<Sprite>(availableSprites);
-        foreach (Sprite sprite in chosenSprites)
-        {
-            extraSprites.Remove(sprite);
-        }
-        if (extraSprites.Count > 0)
-        {
-            chosenSprites.Add(extraSprites[Random.Range(0, extraSprites.Count)]);
-        }
-        else
-        {
-            // Fallback: use any available sprite
-            chosenSprites.Add(availableSprites[Random.Range(0, availableSprites.Count)]);
-        }
-    }
-    
-    // Now inject the correct sprite at a random position
-    int matchIndex = Random.Range(0, chosenSprites.Count);
-    chosenSprites[matchIndex] = correctSprite;
-
-    // Final shuffle to randomize positions
-    Shuffle(chosenSprites);
-
-    // --- STEP 4: Spawn cards in grid ---
-    for (int i = 0; i < chosenSprites.Count; i++)
-    {
-        GameObject card = Instantiate(buttonPrefab, gridContainer);
-        assignedSprites.Add(chosenSprites[i]);
-
-        Transform cardImage = card.transform.Find("CardImage");
-        Transform numberImage = card.transform.Find("NumberImage");
-
-        if (cardImage)
-        {
-            cardImage.gameObject.SetActive(true);
-            cardImage.GetComponent<Image>().sprite = chosenSprites[i];
-        }
-
-        if (numberImage)
-        {
-            numberImage.gameObject.SetActive(false);
-            if (tempNumberSprites != null && i < tempNumberSprites.Count)
-                numberImage.GetComponent<Image>().sprite = tempNumberSprites[i];
-        }
-
-        int index = i;
-        card.GetComponent<Button>().onClick.AddListener(() => OnCardClicked(index));
-
-        allButtons.Add(card);
-    }
-
-    Canvas.ForceUpdateCanvases();
-    yield return null;
-}
-
 
 
     IEnumerator CorrectCardSequence()
@@ -801,28 +787,72 @@ IEnumerator StartNewRound()
         if (group == null)
             group = gridContainer.gameObject.AddComponent<CanvasGroup>();
 
-        // 1. Fade OUT the old grid
+        // 1. Fade OUT the old grid (for visual polish)
         gridContainer.DOScale(0.9f, 0.3f).SetEase(Ease.InOutQuad);
         group.DOFade(0f, 0.3f).SetEase(Ease.InQuad);
 
         yield return new WaitForSeconds(0.3f); // Wait for fade out
 
-        // 2. Show loading
+        // 2. Show loading (while performing heavy lifting/waiting for ad)
         yield return StartCoroutine(ShowLoadingScreen());
 
-        // 3. Populate the new grid (it's still invisible)
-        yield return StartCoroutine(StartNewRound()); 
+        // ----------------------------------------------------------------------
+        // 🛑 AD LOGIC INSERTED HERE
+        // ----------------------------------------------------------------------
+        if (Interstitial.instance != null && Interstitial.instance.IsAdAvailable())
+        {
+            Debug.Log("Round won. Showing interstitial ad and deferring next round setup.");
+            
+            // Define the action to continue the game after the ad is dismissed
+            Action continueRoundSetup = () => StartCoroutine(NextRoundSetupSequence());
 
-        // 4. Set up the fade-in animation
+            // Show the ad, passing the action as a callback.
+            Interstitial.instance.ShowInterstitialAd(continueRoundSetup);
+            
+            // Crucially, we yield control here and wait for the callback to resume
+        }
+        else
+        {
+            Debug.Log("Ad not available. Proceeding to next round immediately.");
+            // If ad is not ready, start the next round immediately
+            yield return StartCoroutine(NextRoundSetupSequence());
+        }
+    }
+    
+    // This sequence runs after the ad has been dismissed (or immediately if no ad was shown)
+    IEnumerator NextRoundSetupSequence()
+    {
+        // 1. Hide Loading Screen
+        if (loadingScreenPrefab.activeSelf)
+        {
+            // Use fade out logic to hide the screen cleanly
+            CanvasGroup cg = loadingScreenPrefab.GetComponent<CanvasGroup>();
+            if (cg != null)
+            {
+                cg.DOFade(0f, 0.3f).OnComplete(() => loadingScreenPrefab.SetActive(false));
+                yield return new WaitForSeconds(0.3f);
+            }
+            else
+            {
+                loadingScreenPrefab.SetActive(false);
+            }
+        }
+
+        // 2. Populate the new grid (it's still invisible)
+        yield return StartCoroutine(StartNewRoundSetup()); 
+
+        // 3. Set up the fade-in animation
+        CanvasGroup group = gridContainer.GetComponent<CanvasGroup>();
         gridContainer.localScale = Vector3.one * 0.9f;
         group.alpha = 0f;
+        
         gridContainer.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
         group.DOFade(1f, 0.3f);
         
-        // 5. Wait for the new grid to fade IN
+        // 4. Wait for the new grid to fade IN
         yield return new WaitForSeconds(0.3f); // Wait for fade-in to complete
 
-        // 6. NOW run the memorize/play phase (cards are visible!)
+        // 5. NOW run the memorize/play phase (cards are visible!)
         yield return StartCoroutine(MemorizeAndPlayPhase());
     }
 
@@ -838,19 +868,6 @@ IEnumerator StartNewRound()
         }
     }
 
-
-    // IEnumerator FlipCardWithTween(GameObject front, GameObject back)
-    // {
-    //     if (front == null || back == null) yield break;
-
-    //     front.transform.DORotate(new Vector3(0, 90, 0), 0.2f).SetEase(Ease.InQuad);
-    //     yield return new WaitForSeconds(0.2f);
-
-    //     front.SetActive(false);
-    //     back.SetActive(true);
-    //     back.transform.localEulerAngles = new Vector3(0, 270, 0);
-    //     back.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutQuad);
-    // }
 
     IEnumerator FlipCardWithTween(GameObject front, GameObject back)
     {
@@ -874,39 +891,6 @@ IEnumerator StartNewRound()
         yield return new WaitForSeconds(0.2f);
     }
 
-    // void OnCardClicked(int index)
-    // {
-    //     if (!canClick) return;
-
-    //     GameObject clickedCard = allButtons[index];
-    //     Sprite clickedSprite = assignedSprites[index];
-
-    //     if (clickedSprite == correctSprite)
-    //     {
-    //         timerText.text = "✅ Correct! Next round...";
-    //         PlaySFX(correctSound);
-
-    //         clickedCard.transform.DOPunchScale(Vector3.one * 0.2f, 0.3f, 8, 1f);
-    //         clickedCard.transform.DOShakeRotation(0.3f, new Vector3(0, 20, 0), 10);
-
-    //         if (correctParticle)
-    //         {
-    //             ParticleSystem ps = Instantiate(correctParticle, clickedCard.transform.position, Quaternion.identity);
-    //             Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
-    //         }
-
-    //         StartCoroutine(CorrectCardSequence());
-    //     }
-    //     else
-    //     {
-    //         timerText.text = "❌ Wrong! Try again.";
-    //         PlaySFX(wrongSound);
-
-    //         clickedCard.transform.DOShakePosition(0.3f, new Vector3(15f, 0, 0), 10, 90, false, true);
-    //         clickedCard.transform.DOPunchRotation(new Vector3(0, 0, 10f), 0.3f);
-    //     }
-    // }
-
     void OnCardClicked(int index)
     {
         if (!canClick) return;
@@ -922,7 +906,6 @@ IEnumerator StartNewRound()
             clickedCard.transform.DOPunchScale(Vector3.one * 0.2f, 0.3f, 8, 1f);
             clickedCard.transform.DOShakeRotation(0.3f, new Vector3(0, 20, 0), 10);
 
-            // --- CHANGES START HERE ---
             if (correctParticle)
             {
                 // Instantiate the particle system at the clicked card's position
@@ -937,9 +920,7 @@ IEnumerator StartNewRound()
             canClick = false; 
 
             // Start the sequence to transition to the next round after a short delay
-            // This delay allows the particle effect to be visible before fading out
             StartCoroutine(StartTransitionToNextRound());
-            // --- CHANGES END HERE ---
         }
         else
         {
@@ -952,29 +933,36 @@ IEnumerator StartNewRound()
     }
     IEnumerator StartTransitionToNextRound()
     {
-        // Give a very brief moment for particles to appear before the screen starts fading out
-        yield return new WaitForSeconds(0.5f); // Adjust this duration as needed
+        // Give a very brief moment for particles/success sound to appear before the screen starts fading out
+        yield return new WaitForSeconds(0.5f); 
 
-        // Now initiate the sequence that fades out, loads, and brings in the new round
+        // Now initiate the sequence that fades out, shows ad/loading, and brings in the new round
         yield return StartCoroutine(CorrectCardSequence());
     }
 
 
     IEnumerator ShowLoadingScreen()
-{
-    if (loadingScreenPrefab == null)
     {
-        Debug.LogWarning("⚠️ No loading screen GameObject assigned!");
-        yield break;
+        if (loadingScreenPrefab == null)
+        {
+            Debug.LogWarning("⚠️ No loading screen GameObject assigned!");
+            yield break;
+        }
+
+        // Just toggle visibility, since it's already in the scene hierarchy
+        loadingScreenPrefab.SetActive(true);
+
+        // Fade in if necessary (assuming it has a CanvasGroup)
+        CanvasGroup cg = loadingScreenPrefab.GetComponent<CanvasGroup>();
+        if (cg != null)
+        {
+            cg.alpha = 0f;
+            cg.DOFade(1f, 0.3f).SetEase(Ease.OutQuad);
+        }
+        
+        // Removed the internal wait/hide logic to be controlled explicitly by the caller (GameStartSequence/NextRoundSetupSequence)
+        yield break; 
     }
-
-    // Just toggle visibility, since it's already in the scene hierarchy
-    loadingScreenPrefab.SetActive(true);
-
-    yield return new WaitForSeconds(loadingDuration);
-
-    loadingScreenPrefab.SetActive(false);
-}
 
 
 
@@ -989,34 +977,11 @@ IEnumerator StartNewRound()
         for (int i = 0; i < list.Count; i++)
         {
             Sprite temp = list[i];
-            int rand = Random.Range(i, list.Count);
+            int rand = UnityEngine.Random.Range(i, list.Count);
             list[i] = list[rand];
             list[rand] = temp;
         }
     }
-
-    // IEnumerator MemorizeAndPlayPhase()
-    // {
-    //     // 1. Run Memorize Timer
-    //     float timeLeft = showTime;
-    //     while (timeLeft > 0)
-    //     {
-    //         timerText.text = $"Memorize: {Mathf.CeilToInt(timeLeft)}s";
-    //         timerText.transform.DOKill(true);
-    //         timerText.transform.localScale = Vector3.one;
-    //         timerText.transform.DOPunchScale(Vector3.one * 0.2f, 0.2f);
-    //         timeLeft -= Time.deltaTime;
-    //         yield return null;
-    //     }
-
-    //     // 2. Flip cards
-    //     yield return StartCoroutine(FlipAllCardsToNumbers());
-
-    //     // 3. Start "Find" phase
-    //     topBoxImage.sprite = correctSprite;
-    //     timerText.text = "Find the matching card!";
-    //     canClick = true;
-    // }
 
     IEnumerator MemorizeAndPlayPhase()
     {
@@ -1030,7 +995,6 @@ IEnumerator StartNewRound()
             timerText.text = $"Memorize: {Mathf.CeilToInt(timeLeft)}s";
             timerText.transform.DOKill(true);
             timerText.transform.localScale = Vector3.one;
-            // timerText.transform.DOPunchScale(Vector3.one * 0.2f, 0.2f);
             timerText.transform.DOScale(1.2f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutSine);
             timeLeft -= Time.deltaTime;
             yield return null;
@@ -1048,30 +1012,15 @@ IEnumerator StartNewRound()
     }
 
 
-    // IEnumerator ShowMessage(string message, float duration = 2f)
-    // {
-    //     if (messageText == null) yield break;
-
-    //     messageText.text = message;
-    //     messageText.gameObject.SetActive(true);
-
-    //     // Reset scale and alpha
-    //     messageText.transform.localScale = Vector3.zero;
-    //     messageText.color = new Color(messageText.color.r, messageText.color.g, messageText.color.b, 1f);
-
-    //     // Animate scale with punch
-    //     messageText.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
-
-    //     // Optional: fade out after duration
-    //     yield return new WaitForSeconds(duration);
-
-    //     messageText.transform.DOScale(0f, 0.5f).SetEase(Ease.InBack)
-    //         .OnComplete(() => messageText.gameObject.SetActive(false));
-    // }
-
     IEnumerator ShowMessage(string message, float duration = 2f)
     {
-        gridContainer.GetComponent<CanvasGroup>().DOFade(0.7f, 0.3f).SetLoops(2, LoopType.Yoyo);
+        // Temporarily fade background for emphasis
+        CanvasGroup gridCG = gridContainer.GetComponent<CanvasGroup>();
+        if (gridCG != null)
+        {
+             // Flash fade to draw attention
+             gridCG.DOFade(0.7f, 0.3f).SetLoops(2, LoopType.Yoyo); 
+        }
 
         if (messageText == null) yield break;
 

@@ -130,7 +130,7 @@ public class ColorSpawner : MonoBehaviour
     private AudioClip currentMusic = null;
     private bool musicStarted = false;
 
-    private int currentColorIndex = 0;
+    // private int currentColorIndex = 0;
     private int lastColorIndex = -1;
 
     private void Start()

@@ -15,10 +15,6 @@
 //     [Header("Current UI Slots")]
 //     public List<Image> currentAlphabetSlots;     // 4 UI slots on screen
 
-//     [Header("Audio Sources")]
-//     public AudioSource musicSource;              // Background music
-//     public AudioSource sfxSource;                // Pop/fail/alphabet sounds
-
 //     [Header("Sound Effects")]
 //     public AudioClip bubblePopSound;
 //     public AudioClip failSound;
@@ -32,30 +28,22 @@
 //     public float nextSetDelay = 0.8f;
 //     public float appearScale = 1.2f;
 
-//     // --- New Shake Settings ---
 //     [Header("Shake Settings")]
-//     public float shakeDuration = 0.2f; // How long the shake lasts
-//     public float shakeMagnitude = 5f;  // How much the elements move
+//     public float shakeDuration = 0.2f;
+//     public float shakeMagnitude = 5f;
 
 //     [Header("Loading Screen")]
-//     public GameObject loadingScreen;   // Assign a UI panel here
-//     public float loadingDuration = 2f; // Show for 2 seconds
+//     public GameObject loadingScreen;
+//     public float loadingDuration = 2f;
 
 //     private char[] currentLetters = new char[4];
 //     private bool[] matched = new bool[4];
 //     private int matchedCount = 0;
 
+//     private bool musicStarted = false;
+
 //     void Start()
 //     {
-//         // --- Start background music ---
-//         if (musicSource != null && backgroundMusic != null)
-//         {
-//             musicSource.clip = backgroundMusic;
-//             musicSource.loop = true;
-//             musicSource.volume = musicVolume;
-//             musicSource.Play();
-//         }
-
 //         if (inactiveAlphabetSprites.Count < 26 || activeAlphabetSprites.Count < 26)
 //         {
 //             Debug.LogError("AlphabetMatchManager: Please assign 26 sprites (A–Z) in both lists!");
@@ -65,17 +53,17 @@
 //         if (loadingScreen != null)
 //             loadingScreen.SetActive(false);
 
-//         // 👇 Show loading screen at game start
+//         // 👇 Start coroutine for loading and setup
 //         StartCoroutine(GameStartRoutine());
 //     }
 
 //     void Update()
 //     {
-//         if (musicSource != null)
-//             musicSource.volume = musicVolume;
-
-//         if (sfxSource != null)
-//             sfxSource.volume = sfxVolume;
+//         // Live update volumes
+//         if (AudioManager.Instance != null)
+//         {
+//             AudioManager.Instance.SetMusicVolume(musicVolume);
+//         }
 //     }
 
 //     private IEnumerator GameStartRoutine()
@@ -87,6 +75,14 @@
 
 //         if (loadingScreen != null)
 //             loadingScreen.SetActive(false);
+
+//         // 🎵 Start background music once
+//         if (AudioManager.Instance != null && backgroundMusic != null && !musicStarted)
+//         {
+//             AudioManager.Instance.PlayBackgroundMusic(backgroundMusic);
+//             AudioManager.Instance.SetMusicVolume(musicVolume);
+//             musicStarted = true;
+//         }
 
 //         SetupNewSet();
 //     }
@@ -101,8 +97,12 @@
 //                 matchedCount++;
 //                 ShowActiveAlphabet(i);
 
-//                 PlaySFX(bubblePopSound);
-//                 PlayAlphabetSound(poppedLetter);
+//                 // ✅ Play success sounds
+//                 if (AudioManager.Instance != null)
+//                 {
+//                     AudioManager.Instance.PlaySFX(bubblePopSound, sfxVolume);
+//                     PlayAlphabetSound(poppedLetter);
+//                 }
 
 //                 // 👇 When all 4 matched → show loading screen again
 //                 if (matchedCount >= 4)
@@ -112,12 +112,11 @@
 //             }
 //         }
 
-//         // --- NEW LOGIC FOR WRONG MATCH ---
-//         // If the loop finishes without a match, it's a wrong click.
+//         // ❌ Wrong letter
 //         StartCoroutine(ShakeAllSlots());
-//         // ---------------------------------
+//         if (AudioManager.Instance != null)
+//             AudioManager.Instance.PlaySFX(failSound, sfxVolume);
 
-//         PlaySFX(failSound);
 //         return false;
 //     }
 
@@ -165,7 +164,6 @@
 //         }
 //     }
 
-//     // 👇 Loading screen appears for 2 seconds after 4 boxes are filled
 //     private IEnumerator LoadingScreenRoutine()
 //     {
 //         if (loadingScreen != null)
@@ -204,7 +202,6 @@
 //         img.color = c;
 //     }
 
-//     // --- NEW SHAKE COROUTINE ---
 //     private IEnumerator ShakeAllSlots()
 //     {
 //         float elapsed = 0.0f;
@@ -218,12 +215,10 @@
 //         {
 //             for (int i = 0; i < currentAlphabetSlots.Count; i++)
 //             {
-//                 // Only shake slots that haven't been matched yet
 //                 if (!matched[i])
 //                 {
 //                     float x = Random.Range(-1f, 1f) * shakeMagnitude;
 //                     float y = Random.Range(-1f, 1f) * shakeMagnitude;
-
 //                     currentAlphabetSlots[i].transform.localPosition = originalPositions[i] + new Vector3(x, y, 0);
 //                 }
 //             }
@@ -232,53 +227,47 @@
 //             yield return null;
 //         }
 
-//         // Reset positions
 //         for (int i = 0; i < currentAlphabetSlots.Count; i++)
 //         {
 //             if (!matched[i])
-//             {
 //                 currentAlphabetSlots[i].transform.localPosition = originalPositions[i];
-//             }
 //         }
 //     }
-//     // ----------------------------
 
 //     private Sprite GetInactiveSprite(char letter)
 //     {
 //         int index = letter - 'A';
 //         return (index >= 0 && index < inactiveAlphabetSprites.Count)
-//             ? inactiveAlphabetSprites[index] : null;
+//             ? inactiveAlphabetSprites[index]
+//             : null;
 //     }
 
 //     private Sprite GetActiveSprite(char letter)
 //     {
 //         int index = letter - 'A';
 //         return (index >= 0 && index < activeAlphabetSprites.Count)
-//             ? activeAlphabetSprites[index] : null;
+//             ? activeAlphabetSprites[index]
+//             : null;
 //     }
 
 //     private void PlayAlphabetSound(char letter)
 //     {
 //         int index = letter - 'A';
-//         if (index >= 0 && index < alphabetSounds.Count)
-//             PlaySFX(alphabetSounds[index]);
-//     }
-
-//     private void PlaySFX(AudioClip clip)
-//     {
-//         if (clip != null && sfxSource != null)
-//             sfxSource.PlayOneShot(clip);
+//         if (index >= 0 && index < alphabetSounds.Count && AudioManager.Instance != null)
+//         {
+//             AudioManager.Instance.PlaySFX(alphabetSounds[index], sfxVolume);
+//         }
 //     }
 
 //     public List<char> GetCurrentLetters() => new List<char>(currentLetters);
 // }
 
 
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System; // Added for Action delegate
 
 public class AlphabetMatchManager : MonoBehaviour
 {
@@ -404,7 +393,7 @@ public class AlphabetMatchManager : MonoBehaviour
 
         for (int i = 0; i < currentAlphabetSlots.Count; i++)
         {
-            char randomLetter = (char)('A' + Random.Range(0, 26));
+            char randomLetter = (char)('A' + UnityEngine.Random.Range(0, 26)); // Using UnityEngine.Random for clarity
             currentLetters[i] = randomLetter;
             currentAlphabetSlots[i].sprite = GetInactiveSprite(randomLetter);
             currentAlphabetSlots[i].color = Color.white;
@@ -443,6 +432,7 @@ public class AlphabetMatchManager : MonoBehaviour
 
     private IEnumerator LoadingScreenRoutine()
     {
+        // 1. Display Loading Screen
         if (loadingScreen != null)
             loadingScreen.SetActive(true);
 
@@ -450,8 +440,24 @@ public class AlphabetMatchManager : MonoBehaviour
 
         if (loadingScreen != null)
             loadingScreen.SetActive(false);
+        
+        // 2. Check and Show Interstitial Ad (New Logic)
+        if (Interstitial.instance != null && Interstitial.instance.IsAdAvailable())
+        {
+            Debug.Log("Ad available. Showing interstitial and deferring next set...");
+            
+            // Create a callback to run the next set logic after the ad closes
+            Action continueGame = () => StartCoroutine(NextSetRoutine());
 
-        StartCoroutine(NextSetRoutine());
+            // Show the ad
+            Interstitial.instance.ShowInterstitialAd(continueGame);
+        }
+        else
+        {
+            Debug.Log("Ad not available or Interstitial manager missing. Starting next set immediately.");
+            // If ad is not ready, proceed directly
+            StartCoroutine(NextSetRoutine());
+        }
     }
 
     private IEnumerator NextSetRoutine()
@@ -494,8 +500,8 @@ public class AlphabetMatchManager : MonoBehaviour
             {
                 if (!matched[i])
                 {
-                    float x = Random.Range(-1f, 1f) * shakeMagnitude;
-                    float y = Random.Range(-1f, 1f) * shakeMagnitude;
+                    float x = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
+                    float y = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
                     currentAlphabetSlots[i].transform.localPosition = originalPositions[i] + new Vector3(x, y, 0);
                 }
             }

@@ -55,6 +55,10 @@
 
 //     private int lastCorrectSoundIndex = -1;
 
+//     [Header("Extra Visual Effects")]
+//     public GameObject glowRingPrefab;
+//     public GameObject starTrailPrefab;
+
 //     void Start()
 //     {
 //         StartCoroutine(ShowInitialLoadingScreen());
@@ -299,9 +303,38 @@
 //             clicked.MarkAsSelected(selected);
 
 //             // ✨ Animate correct selection
-//             clicked.transform.DOPunchScale(Vector3.one * 0.3f, 0.4f, 8, 0.5f);
+//             // clicked.transform.DOPunchScale(Vector3.one * 0.3f, 0.4f, 8, 0.5f);
+//             // if (correctParticlePrefab != null)
+//             //     Instantiate(correctParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
+
+//             // ✨ Animate correct selection — juicy version
+//             clicked.transform.DOKill();
+//             clicked.transform.DOPunchScale(Vector3.one * 0.25f, 0.4f, 10, 0.7f);
+//             clicked.transform.DOShakeRotation(0.3f, 10f, 8, 80f, false);
+
 //             if (correctParticlePrefab != null)
+//             {
+//                 // 🌟 Main burst
 //                 Instantiate(correctParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
+//             }
+
+//             // 🌈 Add layered effects (if prefabs assigned)
+//             if (correctParticlePrefab != null)
+//             {
+//                 Vector3 pos = clicked.transform.position;
+
+//                 // Optional: glow ring
+//                 if (glowRingPrefab != null)
+//                     Instantiate(glowRingPrefab, pos, Quaternion.identity, gridParent);
+
+//                 // Optional: trail sparkles
+//                 if (starTrailPrefab != null)
+//                     Instantiate(starTrailPrefab, pos, Quaternion.identity, gridParent);
+//             }
+
+//             // 🎶 Light bounce of entire grid (fun feedback)
+//             gridParent.DOShakePosition(0.25f, 15f, 8, 90, false, true);
+
 
 //             // ✅ Only trigger round end when all target fruits are found
 //             if (!HasUnselectedTargetFruits())
@@ -504,12 +537,14 @@
 // }
 
 
+
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using DG.Tweening; // Requires DOTween asset
+using System; // Added for Action delegate
 
 public class FruitGridManager : MonoBehaviour
 {
@@ -590,7 +625,6 @@ public class FruitGridManager : MonoBehaviour
             {
                 AudioManager.Instance.PlayBackgroundMusic(backgroundMusic);
                 AudioManager.Instance.SetMusicVolume(backgroundMusicVolume);
-                // AudioManager.Instance.musicSource.DOFade(backgroundMusicVolume, 1.5f).From(0f);
             }
         }
 
@@ -602,8 +636,6 @@ public class FruitGridManager : MonoBehaviour
     {
         EnsureEventSystemAndRaycaster();
         EnsureGridLayoutGroup();
-
-        // Background music will start after first full round completion
 
         PickNewTarget();
         CreateGrid();
@@ -688,7 +720,7 @@ public class FruitGridManager : MonoBehaviour
             if (fruit.fruitImage == null)
                 fruit.fruitImage = obj.GetComponentInChildren<Image>();
 
-            int randomIndex = totalFruits > 0 ? Random.Range(0, totalFruits) : 0;
+            int randomIndex = totalFruits > 0 ? UnityEngine.Random.Range(0, totalFruits) : 0;
             fruit.Init(this, fruitSprites[randomIndex], randomIndex);
             fruits.Add(fruit);
         }
@@ -701,56 +733,39 @@ public class FruitGridManager : MonoBehaviour
             fruit.transform.localScale = Vector3.zero;
             fruit.transform.DOScale(1f, fruitPopDuration)
                 .SetEase(Ease.OutBack)
-                .SetDelay(Random.Range(0f, 0.4f));
+                .SetDelay(UnityEngine.Random.Range(0f, 0.4f));
         }
     }
 
-    // void EnsureTargetFruitExists()
-    // {
-    //     if (targetFruitID < 0 || targetFruitID >= totalFruits || fruits.Count == 0)
-    //         return;
-
-    //     bool hasTarget = false;
-    //     foreach (var f in fruits)
-    //         if (f.fruitID == targetFruitID) { hasTarget = true; break; }
-
-    //     if (!hasTarget)
-    //     {
-    //         int replaceIndex = Random.Range(0, fruits.Count);
-    //         fruits[replaceIndex].Init(this, fruitSprites[targetFruitID], targetFruitID);
-    //         Debug.Log($"[FruitGridManager] Target fruit added at cell {replaceIndex}");
-    //     }
-    // }
-
     void ForceTargetFruitMultipleTimes()
-{
-    if (fruits == null || fruits.Count == 0 || targetFruitID < 0)
-        return;
-
-    int minTarget = 3;
-    int maxTarget = 6;
-    int targetCount = Random.Range(minTarget, maxTarget + 1); // inclusive upper bound
-
-    // Ensure we don't exceed grid size
-    targetCount = Mathf.Min(targetCount, fruits.Count);
-
-    // Pick unique random indices
-    List<int> indices = new List<int>();
-    while (indices.Count < targetCount)
     {
-        int randomIndex = Random.Range(0, fruits.Count);
-        if (!indices.Contains(randomIndex))
-            indices.Add(randomIndex);
-    }
+        if (fruits == null || fruits.Count == 0 || targetFruitID < 0)
+            return;
 
-    // Replace selected cells with the target fruit
-    foreach (int idx in indices)
-    {
-        fruits[idx].Init(this, fruitSprites[targetFruitID], targetFruitID);
-    }
+        int minTarget = 3;
+        int maxTarget = 6;
+        int targetCount = UnityEngine.Random.Range(minTarget, maxTarget + 1); // inclusive upper bound
 
-    Debug.Log($"[FruitGridManager] Target fruit forced {targetCount} times this round.");
-}
+        // Ensure we don't exceed grid size
+        targetCount = Mathf.Min(targetCount, fruits.Count);
+
+        // Pick unique random indices
+        List<int> indices = new List<int>();
+        while (indices.Count < targetCount)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, fruits.Count);
+            if (!indices.Contains(randomIndex))
+                indices.Add(randomIndex);
+        }
+
+        // Replace selected cells with the target fruit
+        foreach (int idx in indices)
+        {
+            fruits[idx].Init(this, fruitSprites[targetFruitID], targetFruitID);
+        }
+
+        Debug.Log($"[FruitGridManager] Target fruit forced {targetCount} times this round.");
+    }
 
 
     void PickNewTarget()
@@ -764,7 +779,7 @@ public class FruitGridManager : MonoBehaviour
         int newTarget;
         do
         {
-            newTarget = Random.Range(0, totalFruits);
+            newTarget = UnityEngine.Random.Range(0, totalFruits);
         }
         while (newTarget == lastTargetFruitID && totalFruits > 1);
 
@@ -797,8 +812,6 @@ public class FruitGridManager : MonoBehaviour
         {
             if (AudioManager.Instance != null && correctSounds.Count > 0)
             {
-                // int randomIndex = Random.Range(0, correctSounds.Count);
-                // AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
                 int randomIndex = GetUniqueRandomCorrectSoundIndex();
                 AudioManager.Instance.PlaySFX(correctSounds[randomIndex]);
             }
@@ -807,11 +820,6 @@ public class FruitGridManager : MonoBehaviour
                 ? selectedFruitSprites[targetFruitID]
                 : null;
             clicked.MarkAsSelected(selected);
-
-            // ✨ Animate correct selection
-            // clicked.transform.DOPunchScale(Vector3.one * 0.3f, 0.4f, 8, 0.5f);
-            // if (correctParticlePrefab != null)
-            //     Instantiate(correctParticlePrefab, clicked.transform.position, Quaternion.identity, gridParent);
 
             // ✨ Animate correct selection — juicy version
             clicked.transform.DOKill();
@@ -867,14 +875,13 @@ public class FruitGridManager : MonoBehaviour
         int index;
         do
         {
-            index = Random.Range(0, correctSounds.Count);
+            index = UnityEngine.Random.Range(0, correctSounds.Count);
         }
         while (index == lastCorrectSoundIndex && correctSounds.Count > 1);
 
         lastCorrectSoundIndex = index;
         return index;
     }
-
 
 
     IEnumerator HandleRoundCompletion()
@@ -886,7 +893,7 @@ public class FruitGridManager : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
 
-        // 🎉 Play success clip (kids like instant response)
+        // 🎉 Play success clip 
         if (AudioManager.Instance != null && successClip != null)
             AudioManager.Instance.PlaySFX(successClip);
 
@@ -906,30 +913,51 @@ public class FruitGridManager : MonoBehaviour
             }
         }
 
-        // 🕐 Keep it on screen for a short, satisfying moment
+        // 🕐 Keep it on screen for a short, satisfying moment (length of successClip + buffer)
         yield return new WaitForSeconds(successClip != null ? successClip.length + 0.4f : 1.2f);
 
-        // ✅ Hide loading and move to next round
-        if (loadingScreenInstance != null)
+        // ----------------------------------------------------------------------
+        // 🛑 AD LOGIC INSERTED HERE
+        // ----------------------------------------------------------------------
+        if (Interstitial.instance != null && Interstitial.instance.IsAdAvailable())
         {
-            CanvasGroup cg = loadingScreenInstance.GetComponent<CanvasGroup>();
-            if (cg != null)
-                cg.DOFade(0f, 0.4f).OnComplete(() => loadingScreenInstance.SetActive(false));
-            else
-                loadingScreenInstance.SetActive(false);
-        }
+            Debug.Log("Round complete. Showing interstitial ad and deferring next round.");
 
-        // 🎵 Restart background music if needed
-        if (AudioManager.Instance != null && backgroundMusic != null && !AudioManager.Instance.IsMusicPlaying())
+            // Fade out the loading screen before showing the ad
+            if (loadingScreenInstance != null)
+            {
+                CanvasGroup cg = loadingScreenInstance.GetComponent<CanvasGroup>();
+                if (cg != null)
+                    cg.DOFade(0f, 0.4f).OnComplete(() => loadingScreenInstance.SetActive(false));
+                else
+                    loadingScreenInstance.SetActive(false);
+            }
+
+            // Define the action to continue the game (NextRound)
+            Action continueGame = NextRound;
+
+            // Show the ad, passing the action as a callback
+            Interstitial.instance.ShowInterstitialAd(continueGame);
+        }
+        else
         {
-            AudioManager.Instance.PlayBackgroundMusic(backgroundMusic);
-            AudioManager.Instance.SetMusicVolume(backgroundMusicVolume);
-        }
+            Debug.Log("Ad not available. Proceeding to next round immediately.");
 
-        NextRound();
+            // Hide loading screen
+            if (loadingScreenInstance != null)
+            {
+                CanvasGroup cg = loadingScreenInstance.GetComponent<CanvasGroup>();
+                if (cg != null)
+                    cg.DOFade(0f, 0.4f).OnComplete(() => loadingScreenInstance.SetActive(false));
+                else
+                    loadingScreenInstance.SetActive(false);
+            }
+
+            // Proceed to the next round immediately
+            NextRound();
+        }
+        // ----------------------------------------------------------------------
     }
-
-
 
 
     IEnumerator ShowLoadingAfterCorrectClick()
@@ -947,6 +975,12 @@ public class FruitGridManager : MonoBehaviour
 
     void NextRound()
     {
+        // 🎵 Restart background music if needed (after ad is dismissed)
+        if (AudioManager.Instance != null && backgroundMusic != null && !AudioManager.Instance.IsMusicPlaying())
+        {
+            AudioManager.Instance.PlayBackgroundMusic(backgroundMusic);
+            AudioManager.Instance.SetMusicVolume(backgroundMusicVolume);
+        }
         StartCoroutine(TransitionToNextRound());
     }
 
@@ -972,7 +1006,7 @@ public class FruitGridManager : MonoBehaviour
             fruit.transform.localScale = Vector3.zero;
             fruit.transform.DOScale(1f, 0.4f)
                 .SetEase(Ease.OutBack)
-                .SetDelay(Random.Range(0f, 0.3f));
+                .SetDelay(UnityEngine.Random.Range(0f, 0.3f));
         }
 
         if (targetCanvasGroup != null)
@@ -998,7 +1032,7 @@ public class FruitGridManager : MonoBehaviour
     {
         for (int i = 0; i < fruits.Count; i++)
         {
-            int randomIndex = totalFruits > 0 ? Random.Range(0, totalFruits) : 0;
+            int randomIndex = totalFruits > 0 ? UnityEngine.Random.Range(0, totalFruits) : 0;
             fruits[i].Init(this, fruitSprites[randomIndex], randomIndex);
         }
     }
@@ -1023,8 +1057,8 @@ public class FruitGridManager : MonoBehaviour
         float totalSpacingX = (columns - 1) * gl.spacing.x;
         float totalSpacingY = (rows - 1) * gl.spacing.y;
 
-        float cellWidth = (parentWidth - totalSpacingX - gl.padding.left - gl.padding.right) / columns;
-        float cellHeight = (parentHeight - totalSpacingY - gl.padding.top - gl.padding.bottom) / rows;
+        float cellWidth = (parentWidth - gl.padding.left - gl.padding.right) / columns - gl.spacing.x;
+        float cellHeight = (parentHeight - gl.padding.top - gl.padding.bottom) / rows - gl.spacing.y;
 
         // Ensure cell size is positive
         cellWidth = Mathf.Max(0, cellWidth);
